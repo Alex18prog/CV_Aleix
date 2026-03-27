@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 nombre: "Portfolio Curricular Interactivo", 
                 tech: ["HTML5", "CSS3", "JS Vanilla"], 
                 desc: "Sitio web profesional con efectos de tipado automático, diseño responsive y optimización de UX/UI mediante animaciones nativas y Intersection Observer.",
-                link: "https://github.com/tu-usuario/portfolio" // Pon tu link real aquí
+                link: "https://github.com/Alex18prog/CV_Aleix" // Pon tu link real aquí
             }
         ];
 
