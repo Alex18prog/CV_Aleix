@@ -379,8 +379,7 @@ html {
 @media print {
     /* 1. Limpieza general para el "papel" */
     body {
-        background: white !important; /* Fondo blanco para ahorrar tinta y asegurar legibilidad */
-        color: black !important; /* Texto negro */
+        
         font-size: 11pt; /* Un tamaño de fuente más adecuado para lectura en papel */
     }
 
@@ -413,6 +412,12 @@ html {
         border: 1px solid #ddd !important; /* Un borde gris */
         color: #333 !important; /* Texto gris oscuro */
         -webkit-print-color-adjust: exact; /* Ayuda a algunos navegadores a respetar los colores */
+    }
+
+    .portfolio-url {
+        color: #0c5bb4 !important;
+        text-decoration: underline !important;
+        font-weight: bold;
     }
 }
 
