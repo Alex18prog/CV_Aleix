@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aleix Pascual | Junior Web Developer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-theme">
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Aleix Pascual</h1>
+            <p>Estudiante de DAW | Apasionado por el código limpio</p>
+        </div>
+
+        <div class="code-window">
+            <div class="window-header">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+                <span class="file-name">presentacion.html</span>
+            </div>
+            <div class="window-content">
+                <div class="code-editor">
+                    <div class="code-line"><span class="tag">&lt;section</span> <span class="attr">id</span>=<span class="val">"presentacion"</span><span class="tag">&gt;</span></div>
+                    <div class="code-line indent"><span class="tag">&lt;h1&gt;</span>Hola, soy Aleix Pascual<span class="tag">&lt;/h1&gt;</span></div>
+                    <div class="code-line indent"><span class="tag">&lt;p&gt;</span></div>
+                    <div class="code-line indent2">Mi formación técnica en DAW se complementa con mi pasión por el desarrollo de aplicaciones web y una mentalidad de aprendizaje constante. Mi especialidad es el desarrollo de soluciones dinámicas, prestando atención tanto a la lógica del backend como al detalle visual en el frontend. Mi meta es agregar valor inmediato a los equipos de desarrollo mediante la proactividad, la colaboración en equipo y una dedicación ininterrumpida a mejorar procesos y la calidad del software.</div>
+                    <div class="code-line indent2">Me encanta transformar ideas en código limpio.</div>
+                    <div class="code-line indent"><span class="tag">&lt;/p&gt;</span></div>
+                    <div class="code-line indent"><span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="val">"#contacto"</span><span class="tag">&gt;</span>¡Hablemos!<span class="tag">&lt;/a&gt;</span></div>
+                    <div class="code-line"><span class="tag">&lt;/section&gt;</span></div>
+                </div>
+                <span id="cursor">|</span>
+            </div>
+        </div>
+    </header>
+
+    <section id="skills" class="reveal">
+        <h2>Tecnologías</h2>
+        <div class="skills-container">
+            <div class="skill-category">
+                <h3>Frontend</h3>
+                <ul>
+                    <li>HTML/CSS <span class="bar"><span class="progress" data-width="95%"></span></span></li>
+                    <li>JavaScript <span class="bar"><span class="progress" data-width="85%"></span></span></li>
+                    <li>React <span class="bar"><span class="progress" data-width="60%"></span></span></li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>Backend & DevOps</h3>
+                <ul>
+                    <li>.NET 9 / C# <span class="bar"><span class="progress" data-width="85%"></span></span></li>
+                    <li>SQL Server / EF Core <span class="bar"><span class="progress" data-width="80%"></span></span></li>
+                    <li>Docker <span class="bar"><span class="progress" data-width="70%"></span></span></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="proyectos" class="reveal">
+        <h2>Proyectos Destacados</h2>
+        <div class="grid-proyectos" id="lista-proyectos">
+            </div>
+    </section>
+
+    <section id="contacto" class="reveal">
+        <h2>Contacto</h2>
+        <div class="contacto-grid">
+            <a href="mailto:alex18prog@gmail.com" class="contacto-card">
+                <span class="icon">📧</span>
+                <h3>Email</h3>
+                <p>tu-email@ejemplo.com</p>
+            </a>
+            <a href="https://www.linkedin.com/feed/" target="_blank" class="contacto-card">
+                <span class="icon">🔗</span>
+                <h3>LinkedIn</h3>
+                <p>Conectemos</p>
+            </a>
+            <a href="https://github.com/Alex18prog" target="_blank" class="contacto-card">
+                <span class="icon">💻</span>
+                <h3>GitHub</h3>
+                <p>Mira mi código</p>
+            </a>
+            <a href="https://wa.me/34679847024?text=Hola,%20he%20visto%20tu%20portfolio%20y%20me%20gustaría%20contactar%20contigo" 
+                target="_blank" 
+                class="contacto-card">
+                <span class="icon">💬</span>
+                <h3>WhatsApp</h3>
+                <p>Escríbeme un mensaje</p>
+            </a>
+        </div>
+        <div class="cv-download">
+            <a href="CV_Aleix_DAW.pdf" download="CV_Aleix_DAW.pdf" class="btn-cv">
+                <span class="icon-download">📥</span> Descargar mi CV (PDF)
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 - Programado con ❤️ por Aleix Pascual</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,418 @@
+/* --- Variables y Estilos Base --- */
+:root {
+    --bg-color: #0f172a;       /* Azul muy oscuro profesional */
+    --text-main: #f1f5f9;      /* Blanco roto */
+    --primary: #38bdf8;        /* Azul cielo brillante (Cyan) */
+    --text-muted: #94a3b8;     /* Gris para textos secundarios */
+    
+    /* Colores estilo editor VS Code / Terminal */
+    --code-bg: #1a1b26;        /* Fondo del editor */
+    --code-header: #24283b;    /* Cabecera de la ventana */
+    --code-tag: #f472b6;       /* Rosa para etiquetas */
+    --code-attr: #4ade80;      /* Verde para atributos */
+    --code-val: #fbbf24;       /* Amarillento para valores */
+    --code-text: #a9b1d6;      /* Texto normal de código */
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* --- Hero Section --- */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    text-align: center;
+    /* Fondo con degradado sutil */
+    background: radial-gradient(circle at center, #1e293b 0%, #0f172a 100%);
+}
+
+.hero-content { margin-bottom: 4rem; }
+
+.hero-content h1 {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+.hero-content p {
+    color: var(--text-muted);
+    font-size: clamp(1rem, 2vw, 1.4rem);
+    font-weight: 300;
+}
+
+/* --- 💻 La Ventana de Código Moderna --- */
+.code-window {
+    width: 100%;
+    max-width: 800px;
+    background-color: var(--code-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+    border: 1px solid rgba(255,255,255,0.05);
+    transition: transform 0.3s ease;
+}
+
+.code-window:hover {
+    transform: translateY(-5px);
+}
+
+/* Cabecera estilo macOS/Linux */
+.window-header {
+    background-color: var(--code-header);
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.dot { width: 12px; height: 12px; border-radius: 50%; margin-right: 8px; }
+.red { background-color: #ff5f56; }
+.yellow { background-color: #ffbd2e; }
+.green { background-color: #27c93f; }
+
+.file-name {
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+/* Contenido del editor */
+.window-content {
+    padding: 2rem;
+    position: relative;
+    min-height: 300px; /* Asegura un tamaño inicial */
+    text-align: left;
+}
+
+.code-editor {
+    font-family: 'Fira Code', monospace;
+    font-size: clamp(0.8rem, 1.2vw, 1rem);
+    color: var(--code-text);
+    /* IMPORTANTE: JavaScript se encargará de mostrar el texto poco a poco */
+}
+
+.code-line { margin-bottom: 6px; white-space: pre-wrap; word-break: break-word; }
+.indent { padding-left: 1.5rem; }
+.indent2 { padding-left: 3rem; }
+
+.tag { color: var(--code-tag); }
+.attr { color: var(--code-attr); }
+.val { color: var(--code-val); }
+
+/* --- 💥 Efecto Hacker: Cursor parpadeante --- */
+#cursor {
+    font-family: 'Fira Code', monospace;
+    font-size: 1.2rem;
+    color: var(--primary);
+    animation: blink 1s infinite;
+    position: absolute; /* Para que el texto lo empuje */
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Secciones Inferiores (Básicas) */
+#sobre-mi {
+    max-width: 800px;
+    margin: 6rem auto;
+    padding: 4rem;
+    background: #1e293b;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+h2 {
+    color: var(--primary);
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.skill-category h3 {
+    color: var(--text-main);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.skill-category ul { list-style: none; }
+
+.skill-category li {
+    margin-bottom: 15px;
+    color: var(--text-muted);
+    font-family: 'Fira Code', monospace;
+}
+
+/* Barras de progreso estilo terminal */
+.bar {
+    display: block;
+    background: #334155;
+    height: 8px;
+    border-radius: 4px;
+    margin-top: 5px;
+    position: relative;
+}
+
+.progress {
+    display: block;
+    background: var(--primary);
+    height: 100%;
+    border-radius: 4px;
+    box-shadow: 0 0 10px var(--primary);
+    
+    /* MODIFICACIÓN: Empezamos en 0 */
+    width: 0%; 
+    
+    /* Transición suave para cuando JS cambie el ancho */
+    transition: width 1.5s cubic-bezier(0.17, 0.55, 0.55, 1);
+}
+
+/* Clase para el efecto de aparición de las secciones */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+section {
+    /* Limitamos el ancho a 900px para que no se estire al infinito */
+    max-width: 900px; 
+    
+    /* margin-inline: auto centra el bloque horizontalmente */
+    margin: 4rem auto; 
+    
+    padding: 3rem;
+    background: var(--bg-card);
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.05);
+    
+    /* Añadimos una pequeña sombra para dar profundidad */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* Ajuste para que en móviles no pegue a los bordes */
+@media (max-width: 768px) {
+    section {
+        margin: 2rem 1rem;
+        padding: 2rem 1.5rem;
+    }
+}
+
+.tech-tag {
+    background: rgba(56, 189, 248, 0.1);
+    color: var(--primary);
+    padding: 4px 10px;
+    border-radius: 15px;
+    font-size: 0.75rem;
+    font-family: 'Fira Code', monospace;
+    margin-right: 5px;
+}
+
+.btn-git {
+    display: inline-block;
+    margin-top: 1.5rem;
+    color: var(--text-main);
+    border: 1px solid var(--primary);
+    padding: 8px 16px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.btn-git:hover {
+    background: var(--primary);
+    color: var(--bg-color);
+}
+
+/* --- Sección Contacto --- */
+.contacto-intro {
+    text-align: center;
+    color: var(--text-muted);
+    margin-bottom: 2.5rem;
+}
+
+.contacto-grid {
+    display: grid;
+    /* Esto crea columnas automáticas de mínimo 220px */
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
+    gap: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+}
+
+.contacto-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: 12px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.contacto-card:hover {
+    background: rgba(56, 189, 248, 0.05);
+    border-color: var(--primary);
+    transform: translateY(-5px);
+}
+
+/* Estilo para los iconos de las tarjetas */
+.contacto-card .icon {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 1rem;
+    filter: drop-shadow(0 0 5px var(--primary));
+}
+
+.contacto-card h3 {
+    color: var(--text-main);
+    font-size: 1.1rem;
+    margin-bottom: 0.2rem;
+}
+
+.contacto-card p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* --- Botón Descarga CV --- */
+.cv-download {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.btn-cv {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--primary); /* El azul cyan que estamos usando */
+    color: #0f172a; /* Color oscuro para que contraste con el cyan */
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(56, 189, 248, 0.3);
+}
+
+.btn-cv:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(56, 189, 248, 0.5);
+    background: #7dd3fc; /* Un cyan un poco más claro al pasar el ratón */
+}
+
+.icon-download {
+    font-size: 1.2rem;
+}
+
+.btn-cv:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 30px rgba(56, 189, 248, 0.4);
+    background: #fff;
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    padding: 3rem;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer-tech {
+    margin-top: 0.5rem;
+    font-family: 'Fira Code', monospace;
+    opacity: 0.6;
+}
+
+/* Forzar el scroll suave en todo el documento */
+html {
+    scroll-behavior: smooth;
+}
+
+/* El enlace hacker debe ser el elemento con más prioridad de la web */
+#enlace-hacker {
+    color: #38bdf8 !important; /* Tu color cyan */
+    text-decoration: underline !important;
+    cursor: pointer !important;
+    display: inline-block !important;
+    position: relative !important;
+    z-index: 99999 !important; /* Nivel máximo */
+    pointer-events: auto !important;
+}
+
+/* Evitamos que cualquier contenedor bloquee el paso del ratón */
+.code-window, .window-content {
+    pointer-events: none !important;
+}
+
+.code-editor {
+    pointer-events: auto !important;
+}
+
+/* --- ESTILOS DE IMPRESIÓN --- */
+@media print {
+    /* 1. Limpieza general para el "papel" */
+    body {
+        background: white !important; /* Fondo blanco para ahorrar tinta y asegurar legibilidad */
+        color: black !important; /* Texto negro */
+        font-size: 11pt; /* Un tamaño de fuente más adecuado para lectura en papel */
+    }
+
+    /* Ocultar elementos innecesarios en el PDF */
+    /* Por ejemplo: el menú de navegación, el cursor parpadeante, etc. */
+    nav, #cursor, .no-imprimir {
+        display: none !important;
+    }
+
+    /* 2. Control de saltos de página y contenedores */
+    section {
+        /* Evita que una sección se corte por la mitad entre dos páginas */
+        page-break-inside: avoid;
+        margin-bottom: 20px;
+    }
+
+    h1, h2, h3 {
+        /* Asegura que los títulos no queden sueltos al final de una página */
+        page-break-after: avoid;
+    }
+
+    /* 3. Estilos específicos para las secciones */
+    #contacto {
+        page-break-before: always; /* Fuerza que la sección de contacto empiece en una página nueva */
+    }
+
+    /* Ejemplo de cómo adaptar tus tarjetas de contacto si usas el diseño oscuro */
+    .contacto-card {
+        background: #f8f9fa !important; /* Un gris muy claro de fondo */
+        border: 1px solid #ddd !important; /* Un borde gris */
+        color: #333 !important; /* Texto gris oscuro */
+        -webkit-print-color-adjust: exact; /* Ayuda a algunos navegadores a respetar los colores */
+    }
+}
+
