@@ -1,113 +1,460 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aleix Pascual | Junior Web Developer</title>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Aleix Pascual | Estudiante de DAW & Desarrollador Web</title>
+    <meta name="description"
+        content="Portfolio interactivo y currículum profesional de Aleix Pascual, estudiante de Desarrollo de Aplicaciones Web (DAW) apasionado por el código limpio y la arquitectura de software.">
+    <!-- Google Fonts: Bricolage Grotesque (Display), Plus Jakarta Sans (Body), Fira Code (Mono) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Fira+Code:wght@300..700&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="dark-theme">
 
-    <header class="hero">
-        <div class="hero-content">
-            <h1>Aleix Pascual</h1>
-            <p>Estudiante de DAW | Apasionado por el código limpio</p>
-        </div>
+<body>
 
-        <div class="code-window">
-            <div class="window-header">
-                <span class="dot red"></span>
-                <span class="dot yellow"></span>
-                <span class="dot green"></span>
-                <span class="file-name">presentacion.html</span>
+    <!-- Glow Orbs background texture -->
+    <div class="glow-orb orb-1" aria-hidden="true"></div>
+    <div class="glow-orb orb-2" aria-hidden="true"></div>
+    <div class="glow-orb orb-3" aria-hidden="true"></div>
+    <div class="grid-background" aria-hidden="true"></div>
+
+    <!-- Main Container -->
+    <div class="app-container">
+
+        <!-- Header / Nav -->
+        <header class="main-header">
+            <div class="logo">
+                <span class="logo-bracket">&lt;</span>
+                <span class="logo-text">Aleix.dev</span>
+                <span class="logo-bracket">/&gt;</span>
             </div>
-            <div class="window-content">
-                <div class="code-editor">
-                    <div class="code-line"><span class="tag">&lt;section</span> <span class="attr">id</span>=<span class="val">"presentacion"</span><span class="tag">&gt;</span></div>
-                    <div class="code-line indent"><span class="tag">&lt;h1&gt;</span>Hola, soy Aleix Pascual<span class="tag">&lt;/h1&gt;</span></div>
-                    <div class="code-line indent"><span class="tag">&lt;p&gt;</span></div>
-                    <div class="code-line indent2">Mi formación técnica en DAW se complementa con mi pasión por el desarrollo de aplicaciones web y una mentalidad de aprendizaje constante. Mi especialidad es el desarrollo de soluciones dinámicas, prestando atención tanto a la lógica del backend como al detalle visual en el frontend. Mi meta es agregar valor inmediato a los equipos de desarrollo mediante la proactividad, la colaboración en equipo y una dedicación ininterrumpida a mejorar procesos y la calidad del software.</div>
-                    <div class="code-line indent"><span class="tag">&lt;/p&gt;</span></div>
-                    <div class="code-line indent"><span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="val">"#contacto"</span><span class="tag">&gt;</span>¡Hablemos!<span class="tag">&lt;/a&gt;</span></div>
-                    <div class="code-line"><span class="tag">&lt;/section&gt;</span></div>
+            <nav class="main-nav">
+                <a href="#inicio" class="nav-link active" id="nav-btn-inicio">Inicio</a>
+                <a href="#tecnologias" class="nav-link" id="nav-btn-tecnologias">Tecnologías</a>
+                <a href="#proyectos" class="nav-link" id="nav-btn-proyectos">Proyectos</a>
+                <a href="#contacto" class="nav-link" id="nav-btn-contacto">Contacto</a>
+            </nav>
+        </header>
+
+        <main>
+            <!-- Hero / Presentación -->
+            <section id="inicio" class="hero-section scroll-reveal">
+                <div class="hero-content">
+                    <h1 class="hero-title">Aleix Pascual</h1>
+                    <p class="hero-subtitle">Estudiante de DAW <span class="divider">|</span> Apasionado por el código
+                        limpio</p>
                 </div>
-                <span id="cursor">|</span>
-            </div>
-        </div>
-    </header>
 
-    <section id="skills" class="reveal">
-        <h2>Tecnologías</h2>
-        <div class="skills-container">
-            <div class="skill-category">
-                <h3>Frontend</h3>
-                <ul>
-                    <li>HTML/CSS <span class="bar"><span class="progress" data-width="95%"></span></span></li>
-                    <li>JavaScript <span class="bar"><span class="progress" data-width="85%"></span></span></li>
-                    <li>React <span class="bar"><span class="progress" data-width="60%"></span></span></li>
-                </ul>
-            </div>
-            <div class="skill-category">
-                <h3>Backend & DevOps</h3>
-                <ul>
-                    <li>.NET 9 / C# <span class="bar"><span class="progress" data-width="85%"></span></span></li>
-                    <li>SQL Server / EF Core <span class="bar"><span class="progress" data-width="80%"></span></span></li>
-                    <li>Docker <span class="bar"><span class="progress" data-width="70%"></span></span></li>
-                </ul>
-            </div>
-        </div>
-    </section>
+                <!-- Interactive Terminal IDE -->
+                <div class="terminal-ide" id="main-terminal">
+                    <div class="terminal-header">
+                        <div class="terminal-dots">
+                            <span class="dot red" id="term-close-btn" title="Cerrar (Minimizar)"></span>
+                            <span class="dot yellow" id="term-min-btn" title="Maximizar"></span>
+                            <span class="dot green" id="term-max-btn" title="Expandir"></span>
+                        </div>
+                        <div class="terminal-title-container">
+                            <svg class="file-icon" viewBox="0 0 24 24" width="14" height="14" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                                <polyline points="10 9 9 9 8 9"></polyline>
+                            </svg>
+                            <span class="terminal-title" id="active-tab-title">presentacion.html</span>
+                        </div>
+                        <div class="terminal-actions">
+                            <button id="run-code-btn" class="terminal-action-btn" title="Ejecutar Código HTML">
+                                <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
+                                    <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                                </svg>
+                                <span>RUN</span>
+                            </button>
+                        </div>
+                    </div>
 
-    <section id="proyectos" class="reveal">
-        <h2>Proyectos Destacados</h2>
-        <div class="grid-proyectos" id="lista-proyectos">
-            </div>
-    </section>
+                    <!-- IDE Sidebar & Editor Workspace -->
+                    <div class="ide-workspace">
+                        <!-- Tiny file explorer tabs -->
+                        <div class="ide-tabs-bar">
+                            <button class="ide-tab active" id="tab-presentacion" data-file="presentacion.html">
+                                <span class="tab-lang html">HTML</span> presentacion.html
+                            </button>
+                            <button class="ide-tab" id="tab-config" data-file="config.json">
+                                <span class="tab-lang json">JSON</span> config.json
+                            </button>
+                            <button class="ide-tab" id="tab-terminal-cmd" data-file="terminal.sh">
+                                <span class="tab-lang sh">SH</span> terminal.sh
+                            </button>
+                        </div>
 
-    <section id="contacto" class="reveal">
-        <h2>Contacto</h2>
-        <div class="contacto-grid">
-            <a href="mailto:alex18prog@gmail.com" class="contacto-card">
-                <span class="icon">📧</span>
-                <h3>Email</h3>
-                <p>tu-email@ejemplo.com</p>
-            </a>
-            <a href="https://www.linkedin.com/feed/" target="_blank" class="contacto-card">
-                <span class="icon">🔗</span>
-                <h3>LinkedIn</h3>
-                <p>Conectemos</p>
-            </a>
-            <a href="https://github.com/Alex18prog" target="_blank" class="contacto-card">
-                <span class="icon">💻</span>
-                <h3>GitHub</h3>
-                <p>Mira mi código</p>
-            </a>
-            <a href="https://wa.me/34679847024?text=Hola,%20he%20visto%20tu%20portfolio%20y%20me%20gustaría%20contactar%20contigo" 
-                target="_blank" 
-                class="contacto-card">
-                <span class="icon">💬</span>
-                <h3>WhatsApp</h3>
-                <p>Escríbeme un mensaje</p>
-            </a>
-        </div>
-        <div class="pdf-link-container">
-            <p>Mira mi CV de forma dinámica:</p>
-            <a href="https://alex18prog.github.io/CV_Aleix/" class="portfolio-url">
-                https://alex18prog.github.io/CV_Aleix/
-            </a>
-        </div>
-        <div class="cv-download">
-            <a href="CV_Aleix_DAW.pdf" download="CV_Aleix_DAW.pdf" class="btn-cv">
-                <span class="icon-download">📥</span> Descargar mi CV (PDF)
-            </a>
-        </div>
-    </section>
+                        <!-- Code Content Area -->
+                        <div class="editor-body">
+                            <!-- File content 1: presentacion.html -->
+                            <div class="file-content active" id="content-presentacion">
+                                <div class="line-numbers">
+                                    <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span><span>14</span>
+                                </div>
+                                <pre class="code-editor"><code class="language-html"><span class="token tag">&lt;section</span> <span class="token attr-name">id</span>=<span class="token attr-value">"presentacion"</span><span class="token tag">&gt;</span>
+  <span class="token tag">&lt;h1&gt;</span>Hola, soy Aleix Pascual<span class="token tag">&lt;/h1&gt;</span>
+  <span class="token tag">&lt;p&gt;</span>
+    Mi formación técnica en DAW se complementa con mi pasión por el
+    desarrollo de aplicaciones web y una mentalidad de aprendizaje
+    constante. Mi especialidad es el desarrollo de soluciones dinámicas,
+    prestando atención tanto a la lógica del backend como al detalle
+    visual en el frontend. Mi meta es agregar valor inmediato a los
+    equipos de desarrollo mediante la proactividad, la colaboración en
+    equipo y una dedicación ininterrumpida a mejorar procesos y la calidad
+    del software.
+  <span class="token tag">&lt;/p&gt;</span>
+  <span class="token tag">&lt;a</span> <span class="token attr-name">href</span>=<span class="token attr-value">"#contacto"</span><span class="token tag">&gt;</span>¡Hablemos!<span class="token tag">&lt;/a&gt;</span>
+<span class="token tag">&lt;/section&gt;</span></code></pre>
+                            </div>
 
-    <footer>
-        <p>&copy; 2026 - Programado con ❤️ por Aleix Pascual</p>
-    </footer>
+                            <!-- File content 2: config.json -->
+                            <div class="file-content" id="content-config">
+                                <div class="line-numbers">
+                                    <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span>
+                                </div>
+                                <pre class="code-editor"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"nombre"</span><span class="token operator">:</span> <span class="token string">"Aleix Pascual"</span><span class="token punctuation">,</span>
+  <span class="token property">"rol"</span><span class="token operator">:</span> <span class="token string">"Estudiante de DAW"</span><span class="token punctuation">,</span>
+  <span class="token property">"enfoque"</span><span class="token operator">:</span> <span class="token string">"Código Limpio & Alto Rendimiento"</span><span class="token punctuation">,</span>
+  <span class="token property">"intereses"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token string">"Backend Arquitectura"</span><span class="token punctuation">,</span>
+    <span class="token string">"Diseño UX/UI Pixel-Perfect"</span><span class="token punctuation">,</span>
+    <span class="token string">"Automatización & DevOps"</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">"disponibilidad"</span><span class="token operator">:</span> <span class="token boolean">true</span>
+<span class="token punctuation">}</span></code></pre>
+                            </div>
 
-    <script src="script.js"></script>
+                            <!-- File content 3: Interactive CLI terminal.sh -->
+                            <div class="file-content" id="content-terminal-cmd">
+                                <div class="terminal-shell" id="cli-shell">
+                                    <div class="shell-output" id="cli-output">
+                                        <p class="shell-welcome">Sistema inicializado correctamente. Escribe <span
+                                                class="shell-highlight">help</span> para ver la lista de comandos
+                                            disponibles.</p>
+                                    </div>
+                                    <div class="shell-input-line">
+                                        <span class="shell-prompt">aleix@portfolio:~$</span>
+                                        <input type="text" id="cli-input" class="shell-input" autocomplete="off"
+                                            spellcheck="false" placeholder="Escribe un comando...">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Executable live preview block (initially hidden, appears on RUN) -->
+                        <div class="editor-preview" id="live-preview-output">
+                            <div class="preview-banner">
+                                <span class="preview-status-indicator"></span>
+                                <span class="preview-status-text">Consola de Vista Previa (Modo Live)</span>
+                                <button id="close-preview-btn" class="close-preview-btn">&times;</button>
+                            </div>
+                            <div class="preview-render-area" id="render-area">
+                                <!-- Rendered HTML will go here dynamically -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="scroll-indicator" id="scroll-to-tech">
+                    <span>Desliza para explorar</span>
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" class="bounce-arrow">
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <polyline points="19 12 12 19 5 12"></polyline>
+                    </svg>
+                </div>
+            </section>
+
+            <!-- Tecnologías Section -->
+            <section id="tecnologias" class="tecnologias-section scroll-reveal">
+                <div class="section-header">
+                    <h2 class="section-title">Tecnologías</h2>
+                    <div class="tech-filters" id="tech-filters-container">
+                        <button class="filter-btn active" data-filter="all">Todos</button>
+                        <button class="filter-btn" data-filter="frontend">Frontend</button>
+                        <button class="filter-btn" data-filter="backend">Backend & DevOps</button>
+                    </div>
+                </div>
+
+                <div class="tech-grid" id="tech-grid-list">
+                    <!-- HTML/CSS (Frontend) -->
+                    <div class="tech-card scroll-reveal-child" data-category="frontend" data-tech="html-css">
+                        <div class="tech-card-header">
+                            <span class="tech-name">HTML/CSS</span>
+                            <span class="tech-percentage">95%</span>
+                        </div>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar-glow" style="--target-width: 95%;"></div>
+                        </div>
+                        <div class="tech-tooltip">Estructuras semánticas accesibles, diseño responsive complejo,
+                            flexbox, CSS Grid y variables de diseño avanzadas.</div>
+                    </div>
+
+                    <!-- JavaScript (Frontend) -->
+                    <div class="tech-card scroll-reveal-child" data-category="frontend" data-tech="javascript">
+                        <div class="tech-card-header">
+                            <span class="tech-name">JavaScript</span>
+                            <span class="tech-percentage">85%</span>
+                        </div>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar-glow" style="--target-width: 85%;"></div>
+                        </div>
+                        <div class="tech-tooltip">Manipulación de DOM nativo, Javascript ES6+, programación asíncrona
+                            (Async/Await), fetch/APIs, e Intersection Observer.</div>
+                    </div>
+
+                    <!-- React (Frontend) -->
+                    <div class="tech-card scroll-reveal-child" data-category="frontend" data-tech="react">
+                        <div class="tech-card-header">
+                            <span class="tech-name">React</span>
+                            <span class="tech-percentage">60%</span>
+                        </div>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar-glow" style="--target-width: 60%;"></div>
+                        </div>
+                        <div class="tech-tooltip">Creación de componentes interactivos, manejo de estados avanzados
+                            (hooks), y layouts SPA eficientes.</div>
+                    </div>
+
+                    <!-- .NET 9 / C# (Backend) -->
+                    <div class="tech-card scroll-reveal-child" data-category="backend" data-tech="net-csharp">
+                        <div class="tech-card-header">
+                            <span class="tech-name">.NET 9 / C#</span>
+                            <span class="tech-percentage">90%</span>
+                        </div>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar-glow" style="--target-width: 90%;"></div>
+                        </div>
+                        <div class="tech-tooltip">Desarrollo de REST APIs robustas, inyección de dependencias,
+                            programación asíncrona, LINQ y C# estructurado.</div>
+                    </div>
+
+                    <!-- SQL Server / EF Core (Backend) -->
+                    <div class="tech-card scroll-reveal-child" data-category="backend" data-tech="sql-ef">
+                        <div class="tech-card-header">
+                            <span class="tech-name">SQL Server / EF Core</span>
+                            <span class="tech-percentage">85%</span>
+                        </div>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar-glow" style="--target-width: 85%;"></div>
+                        </div>
+                        <div class="tech-tooltip">Arquitectura de base de datos relacional Code First, migraciones,
+                            optimización de queries y mapeo objeto-relacional eficiente.</div>
+                    </div>
+
+                    <!-- Docker (Backend) -->
+                    <div class="tech-card scroll-reveal-child" data-category="backend" data-tech="docker">
+                        <div class="tech-card-header">
+                            <span class="tech-name">Docker</span>
+                            <span class="tech-percentage">75%</span>
+                        </div>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar-glow" style="--target-width: 75%;"></div>
+                        </div>
+                        <div class="tech-tooltip">Contenedores para entornos de desarrollo consistentes, Docker Compose
+                            multi-contenedor y despliegue rápido.</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Proyectos Destacados Section -->
+            <section id="proyectos" class="proyectos-section scroll-reveal">
+                <h2 class="section-title">Proyectos Destacados</h2>
+
+                <div class="projects-container">
+                    <!-- Project 1: Task Manager API -->
+                    <article class="project-card scroll-reveal-child">
+                        <div class="project-neon-border"></div>
+                        <div class="project-content">
+                            <header class="project-card-header">
+                                <h3 class="project-name">Task Manager API (.NET 9)</h3>
+                                <span class="project-badge">Backend Core</span>
+                            </header>
+                            <p class="project-description">
+                                API RESTful de alto rendimiento con arquitectura Code First. Implementa persistencia en
+                                SQL Server mediante Docker, documentación interactiva con Swagger y cumplimiento total
+                                de estándares REST.
+                            </p>
+                            <div class="project-tags">
+                                <span class="tag-pill">.NET 9</span>
+                                <span class="tag-pill">EF Core</span>
+                                <span class="tag-pill">SQL Server</span>
+                                <span class="tag-pill">Docker</span>
+                            </div>
+                            <div class="project-footer">
+                                <a href="https://github.com/alex18prog" target="_blank" rel="noopener noreferrer"
+                                    class="project-link" id="github-link-taskmanager">
+                                    <span>Ver Código en GitHub</span>
+                                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                        class="link-arrow">
+                                        <path
+                                            d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                                        </path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 2: Portfolio Curricular Interactivo -->
+                    <article class="project-card scroll-reveal-child">
+                        <div class="project-neon-border"></div>
+                        <div class="project-content">
+                            <header class="project-card-header">
+                                <h3 class="project-name">Portfolio Curricular Interactivo</h3>
+                                <span class="project-badge">Full Stack</span>
+                            </header>
+                            <p class="project-description">
+                                Sitio web profesional con efectos de tipado automático, diseño responsive y optimización
+                                de UX/UI mediante animaciones nativas y Intersection Observer.
+                            </p>
+                            <div class="project-tags">
+                                <span class="tag-pill">HTML5</span>
+                                <span class="tag-pill">CSS3</span>
+                                <span class="tag-pill">JS Vanilla</span>
+                            </div>
+                            <div class="project-footer">
+                                <a href="https://github.com/alex18prog" target="_blank" rel="noopener noreferrer"
+                                    class="project-link" id="github-link-portfolio">
+                                    <span>Ver Código en GitHub</span>
+                                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                        class="link-arrow">
+                                        <path
+                                            d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                                        </path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Contacto Section -->
+            <section id="contacto" class="contacto-section scroll-reveal">
+                <h2 class="section-title">Contacto</h2>
+
+                <div class="contact-grid">
+                    <!-- Card 1: Email -->
+                    <div class="contact-card scroll-reveal-child" id="contact-email-card">
+                        <div class="contact-card-icon-wrapper">
+                            <!-- Custom SVG envelope icon -->
+                            <svg class="contact-svg-icon" viewBox="0 0 24 24" width="36" height="36" fill="none"
+                                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                </path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </div>
+                        <h3 class="contact-card-title">Email</h3>
+                        <p class="contact-card-value" id="email-value">alex18prog@gmail.com</p>
+                        <div class="contact-action-overlay">
+                            <span class="click-action-text" id="email-action-text">Haga clic para copiar</span>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: LinkedIn -->
+                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
+                        class="contact-card scroll-reveal-child" id="contact-linkedin-card">
+                        <div class="contact-card-icon-wrapper">
+                            <!-- Custom SVG chain link -->
+                            <svg class="contact-svg-icon" viewBox="0 0 24 24" width="36" height="36" fill="none"
+                                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                            </svg>
+                        </div>
+                        <h3 class="contact-card-title">LinkedIn</h3>
+                        <p class="contact-card-value">Conectemos</p>
+                        <div class="contact-action-overlay">
+                            <span class="click-action-text">Visitar perfil</span>
+                        </div>
+                    </a>
+
+                    <!-- Card 3: GitHub -->
+                    <a href="https://github.com/alex18prog" target="_blank" rel="noopener noreferrer"
+                        class="contact-card scroll-reveal-child" id="contact-github-card">
+                        <div class="contact-card-icon-wrapper">
+                            <!-- Custom SVG laptop/computer -->
+                            <svg class="contact-svg-icon" viewBox="0 0 24 24" width="36" height="36" fill="none"
+                                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                                <line x1="8" y1="21" x2="16" y2="21"></line>
+                                <line x1="12" y1="17" x2="12" y2="21"></line>
+                            </svg>
+                        </div>
+                        <h3 class="contact-card-title">GitHub</h3>
+                        <p class="contact-card-value">Mira mi código</p>
+                        <div class="contact-action-overlay">
+                            <span class="click-action-text">Explorar repositorios</span>
+                        </div>
+                    </a>
+
+                    <!-- Card 4: WhatsApp -->
+                    <a href="https://wa.me/34679847024" target="_blank" rel="noopener noreferrer"
+                        class="contact-card scroll-reveal-child" id="contact-whatsapp-card">
+                        <div class="contact-card-icon-wrapper">
+                            <!-- Custom SVG message bubble -->
+                            <svg class="contact-svg-icon" viewBox="0 0 24 24" width="36" height="36" fill="none"
+                                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="contact-card-title">WhatsApp</h3>
+                        <p class="contact-card-value">Escríbeme un mensaje</p>
+                        <div class="contact-action-overlay">
+                            <span class="click-action-text">Iniciar chat</span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="contact-extra scroll-reveal">
+                    <p class="dynamic-cv-text">Mira mi CV de forma dinámica:</p>
+                    <a href="https://alex18prog.github.io/CV_Aleix/" target="_blank" rel="noopener noreferrer"
+                        class="cv-dynamic-link">https://alex18prog.github.io/CV_Aleix/</a>
+
+                    <div class="download-container">
+                        <!-- Custom styled PDF download button -->
+                        <a href="CV_Aleix_DAW.pdf" download="CV_Aleix_DAW.pdf" class="download-btn"
+                            id="download-cv-pdf-btn">
+                            <span class="download-icon-wrapper">
+                                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
+                                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="7 10 12 15 17 10"></polyline>
+                                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                                </svg>
+                            </span>
+                            <span class="download-btn-text" id="download-btn-text">Descargar mi CV (PDF)</span>
+                            <span class="download-progress-bar" id="download-progress"></span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="main-footer">
+            <p>&copy; 2026 - Programado con <span class="heart-pulse">❤️</span> por Aleix Pascual</p>
+        </footer>
+    </div>
+
+    <!-- Script file -->
+    <script src="app.js"></script>
 </body>
+
 </html>
