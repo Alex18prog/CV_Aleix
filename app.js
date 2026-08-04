@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Add active class to clicked tab and its content
             tab.classList.add('active');
-            const targetContent = document.getElementById(`content-${fileName.replace('.', '-')}`);
+            const targetContent = document.getElementById(tab.id.replace('tab-', 'content-'));
             if (targetContent) {
                 targetContent.classList.add('active');
             }
@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="preview-compiled-box">
                 <h2>Hola, soy Aleix Pascual</h2>
                 <p>
-                    Mi formación técnica en DAW se complementa con mi pasión por el
+                    Mi formación como desarrollador Full Stack se combina con mi pasión por el
                     desarrollo de aplicaciones web y una mentalidad de aprendizaje
                     constante. Mi especialidad es el desarrollo de soluciones dinámicas,
                     prestando atención tanto a la lógica del backend como al detalle
@@ -147,8 +147,8 @@ document.addEventListener('DOMContentLoaded', () => {
   <span class="shell-highlight">clear</span>      - Limpiar consola`;
                 break;
             case 'about':
-                responseLine.innerHTML = `Estudiante de DAW apasionado por el código limpio, arquitectura óptima y UI premium.
-Combino solidez lógica de Backend (.NET 9, SQL Server) con detalles visuales refinados en Frontend.`;
+                responseLine.innerHTML = `Full Stack Developer apasionado por el código limpio, arquitectura óptima y UI premium.
+Combino solidez lógica de Backend (Java/Spring Boot, Node.js) con detalles visuales refinados en Frontend (React).`;
                 break;
             case 'skills':
                 responseLine.innerHTML = `Métricas Técnicas de Aleix Pascual:
