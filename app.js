@@ -152,25 +152,27 @@ Combino solidez lógica de Backend (.NET 9, SQL Server) con detalles visuales re
                 break;
             case 'skills':
                 responseLine.innerHTML = `Métricas Técnicas de Aleix Pascual:
-  • <span class="shell-highlight">HTML/CSS</span> .............. 95% (Diseño Pixel-Perfect, Grids)
-  • <span class="shell-highlight">JavaScript</span> ............ 85% (DOM Nativo, ES6, Async)
-  • <span class="shell-highlight">.NET 9 / C#</span> ........... 90% (REST APIs, Entity Framework)
-  • <span class="shell-highlight">SQL / EF Core</span> ......... 85% (Migraciones, Code First)
-  • <span class="shell-highlight">Docker</span> ................ 75% (Contenedores, Compose)
-  • <span class="shell-highlight">React</span> ................. 60% (Componentes Interactivos)`;
+  • <span class="shell-highlight">Java / Spring Boot</span> .............. 90% (WebSockets, JPA, Microservicios)
+  • <span class="shell-highlight">TypeScript / Node.js</span> ............ 85% (APIs tipadas, Function Calling)
+  • <span class="shell-highlight">React</span> ............................ 80% (Hooks, WebSocket, SPAs)
+  • <span class="shell-highlight">Docker / CI-CD</span> ................... 80% (Compose, Despliegue continuo)
+  • <span class="shell-highlight">Python (pandas)</span> .................. 75% (Análisis de datos, Streamlit)
+  • <span class="shell-highlight">APIs de IA (function calling)</span> .... 70% (Google Gemini API)`;
                 break;
             case 'projects':
                 responseLine.innerHTML = `Proyectos Destacados:
-  [1] <span class="shell-highlight">Task Manager API (.NET 9)</span>
-      - API RESTful, SQL Server, Docker, Swagger, Clean Architecture.
-  [2] <span class="shell-highlight">Portfolio Curricular Interactivo</span>
-      - Animaciones nativas, responsive, tipado dinámico y diseño UX/UI.`;
+  [1] <span class="shell-highlight">PlantPulse</span> (Full Stack)
+      - CMMS con monitorización IoT en tiempo real, WebSocket, alertas y órdenes de trabajo automáticas.
+  [2] <span class="shell-highlight">LineIQ</span> (Data Analysis)
+      - Dashboard de análisis de eficiencia (OEE) para líneas de fabricación.
+  [3] <span class="shell-highlight">TriagePilot</span> (AI Agent)
+      - Agente de IA para triaje de tickets de soporte con function calling real (Google Gemini API).`;
                 break;
             case 'contact':
                 responseLine.innerHTML = `Canales de contacto activos:
   • <span class="shell-highlight">Email</span>: alex18prog@gmail.com
-  • <span class="shell-highlight">LinkedIn</span>: https://linkedin.com
-  • <span class="shell-highlight">GitHub</span>: https://github.com/alex18prog
+  • <span class="shell-highlight">LinkedIn</span>: https://www.linkedin.com/in/alex-pascual-ortega-7602222b7
+  • <span class="shell-highlight">GitHub</span>: https://github.com/Alex18prog
   • <span class="shell-highlight">WhatsApp</span>: https://wa.me/34679847024`;
                 break;
             case 'clear':
