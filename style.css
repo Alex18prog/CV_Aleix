@@ -867,6 +867,13 @@ body {
     }
 }
 
+@media(min-width: 1100px) {
+    .projects-container {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+}
+
 .project-card {
     position: relative;
     border-radius: 20px;
@@ -923,6 +930,26 @@ body {
     height: 100%;
     position: relative;
     z-index: 1;
+}
+
+.project-image {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 1px solid var(--border-glass);
+    margin-bottom: 1.5rem;
+    background: var(--bg-terminal);
+    display: block;
+    transition: var(--transition-smooth);
+}
+
+.project-card:hover .project-image {
+    border-color: hsla(184, 100%, 50%, 0.3);
+}
+
+.project-card:nth-child(even):hover .project-image {
+    border-color: hsla(327, 100%, 50%, 0.3);
 }
 
 .project-card-header {
@@ -994,6 +1021,10 @@ body {
 .project-footer {
     border-top: 1px solid rgba(255, 255, 255, 0.05);
     padding-top: 1.25rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem 1.5rem;
 }
 
 .project-link {
@@ -1024,6 +1055,39 @@ body {
 
 .project-link:hover .link-arrow {
     transform: translateX(4px) translateY(-1px);
+}
+
+/* Demo CTA link: filled with accent color so it reads as the primary action */
+.project-link-demo {
+    color: var(--bg-dark);
+    background: var(--accent-cyan);
+    text-decoration: none;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0.55rem 1.1rem;
+    border-radius: 8px;
+    transition: var(--transition-smooth);
+}
+
+.project-link-demo:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 22px hsla(184, 100%, 50%, 0.35), 0 0 18px hsla(184, 100%, 50%, 0.3);
+}
+
+.project-link-demo:hover .link-arrow {
+    transform: translateX(2px) translateY(-2px);
+}
+
+.project-card:nth-child(even) .project-link-demo {
+    background: var(--accent-pink);
+}
+
+.project-card:nth-child(even) .project-link-demo:hover {
+    box-shadow: 0 8px 22px hsla(327, 100%, 50%, 0.35), 0 0 18px hsla(327, 100%, 50%, 0.3);
 }
 
 /* ==========================================================================
