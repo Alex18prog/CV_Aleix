@@ -180,7 +180,10 @@
             <!-- Tecnologías Section -->
             <section id="tecnologias" class="tecnologias-section scroll-reveal">
                 <div class="section-header">
-                    <h2 class="section-title">Tecnologías</h2>
+                    <div class="section-heading">
+                        <p class="section-eyebrow"><span class="comment-slashes">//</span>tecnologias.stack</p>
+                        <h2 class="section-title">Tecnologías</h2>
+                    </div>
                     <div class="tech-filters" id="tech-filters-container">
                         <button class="filter-btn active" data-filter="all">Todos</button>
                         <button class="filter-btn" data-filter="frontend">Frontend</button>
@@ -190,7 +193,8 @@
 
                 <div class="tech-grid" id="tech-grid-list">
                     <!-- React (Frontend) -->
-                    <div class="tech-card scroll-reveal-child" data-category="frontend" data-tech="react">
+                    <div class="tech-card scroll-reveal-child" data-category="frontend" data-tech="react"
+                        tabindex="0" aria-describedby="tooltip-react">
                         <div class="tech-card-header">
                             <span class="tech-name">React</span>
                             <span class="tech-percentage">80%</span>
@@ -198,12 +202,13 @@
                         <div class="progress-bar-container">
                             <div class="progress-bar-glow" style="--target-width: 80%;"></div>
                         </div>
-                        <div class="tech-tooltip">Interfaces reactivas con hooks, consumo de WebSocket en tiempo real
+                        <div class="tech-tooltip" id="tooltip-react">Interfaces reactivas con hooks, consumo de WebSocket en tiempo real
                             y despliegue de SPAs en producción (PlantPulse, TriagePilot).</div>
                     </div>
 
                     <!-- Java / Spring Boot (Backend) -->
-                    <div class="tech-card scroll-reveal-child" data-category="backend" data-tech="java-spring">
+                    <div class="tech-card scroll-reveal-child" data-category="backend" data-tech="java-spring"
+                        tabindex="0" aria-describedby="tooltip-java-spring">
                         <div class="tech-card-header">
                             <span class="tech-name">Java / Spring Boot</span>
                             <span class="tech-percentage">90%</span>
@@ -211,12 +216,13 @@
                         <div class="progress-bar-container">
                             <div class="progress-bar-glow" style="--target-width: 90%;"></div>
                         </div>
-                        <div class="tech-tooltip">Backend robusto con Spring Boot, WebSockets en tiempo real,
+                        <div class="tech-tooltip" id="tooltip-java-spring">Backend robusto con Spring Boot, WebSockets en tiempo real,
                             JPA/Hibernate y arquitectura de microservicios para sistemas CMMS (PlantPulse).</div>
                     </div>
 
                     <!-- TypeScript / Node.js (Backend) -->
-                    <div class="tech-card scroll-reveal-child" data-category="backend" data-tech="typescript-node">
+                    <div class="tech-card scroll-reveal-child" data-category="backend" data-tech="typescript-node"
+                        tabindex="0" aria-describedby="tooltip-typescript-node">
                         <div class="tech-card-header">
                             <span class="tech-name">TypeScript / Node.js</span>
                             <span class="tech-percentage">85%</span>
@@ -224,12 +230,13 @@
                         <div class="progress-bar-container">
                             <div class="progress-bar-glow" style="--target-width: 85%;"></div>
                         </div>
-                        <div class="tech-tooltip">APIs tipadas de extremo a extremo con Node.js, integración de
+                        <div class="tech-tooltip" id="tooltip-typescript-node">APIs tipadas de extremo a extremo con Node.js, integración de
                             function calling con LLMs y despliegue en producción (TriagePilot).</div>
                     </div>
 
                     <!-- Python / pandas (Backend) -->
-                    <div class="tech-card scroll-reveal-child" data-category="backend" data-tech="python-pandas">
+                    <div class="tech-card scroll-reveal-child" data-category="backend" data-tech="python-pandas"
+                        tabindex="0" aria-describedby="tooltip-python-pandas">
                         <div class="tech-card-header">
                             <span class="tech-name">Python (pandas)</span>
                             <span class="tech-percentage">75%</span>
@@ -237,12 +244,13 @@
                         <div class="progress-bar-container">
                             <div class="progress-bar-glow" style="--target-width: 75%;"></div>
                         </div>
-                        <div class="tech-tooltip">Procesamiento y análisis de datos con pandas, cálculo de métricas
+                        <div class="tech-tooltip" id="tooltip-python-pandas">Procesamiento y análisis de datos con pandas, cálculo de métricas
                             OEE y dashboards interactivos con Streamlit (LineIQ).</div>
                     </div>
 
                     <!-- APIs de IA / function calling (Backend) -->
-                    <div class="tech-card scroll-reveal-child" data-category="backend" data-tech="ai-apis">
+                    <div class="tech-card scroll-reveal-child" data-category="backend" data-tech="ai-apis"
+                        tabindex="0" aria-describedby="tooltip-ai-apis">
                         <div class="tech-card-header">
                             <span class="tech-name">APIs de IA (function calling)</span>
                             <span class="tech-percentage">70%</span>
@@ -250,12 +258,13 @@
                         <div class="progress-bar-container">
                             <div class="progress-bar-glow" style="--target-width: 70%;"></div>
                         </div>
-                        <div class="tech-tooltip">Integración de Google Gemini API con function calling real para
+                        <div class="tech-tooltip" id="tooltip-ai-apis">Integración de Google Gemini API con function calling real para
                             automatizar el triaje y la toma de decisiones de agentes de IA (TriagePilot).</div>
                     </div>
 
                     <!-- Docker / CI-CD (Backend) -->
-                    <div class="tech-card scroll-reveal-child" data-category="backend" data-tech="docker-cicd">
+                    <div class="tech-card scroll-reveal-child" data-category="backend" data-tech="docker-cicd"
+                        tabindex="0" aria-describedby="tooltip-docker-cicd">
                         <div class="tech-card-header">
                             <span class="tech-name">Docker / CI-CD</span>
                             <span class="tech-percentage">80%</span>
@@ -263,7 +272,7 @@
                         <div class="progress-bar-container">
                             <div class="progress-bar-glow" style="--target-width: 80%;"></div>
                         </div>
-                        <div class="tech-tooltip">Contenedorización multi-servicio con Docker Compose y flujos de
+                        <div class="tech-tooltip" id="tooltip-docker-cicd">Contenedorización multi-servicio con Docker Compose y flujos de
                             integración/despliegue continuo para entornos de producción.</div>
                     </div>
                 </div>
@@ -271,7 +280,10 @@
 
             <!-- Proyectos Destacados Section -->
             <section id="proyectos" class="proyectos-section scroll-reveal">
-                <h2 class="section-title">Proyectos Destacados</h2>
+                <div class="section-heading">
+                    <p class="section-eyebrow"><span class="comment-slashes">//</span>proyectos.destacados</p>
+                    <h2 class="section-title">Proyectos Destacados</h2>
+                </div>
 
                 <div class="projects-container">
                     <!-- Project 1: PlantPulse -->
@@ -417,11 +429,15 @@
 
             <!-- Contacto Section -->
             <section id="contacto" class="contacto-section scroll-reveal">
-                <h2 class="section-title">Contacto</h2>
+                <div class="section-heading">
+                    <p class="section-eyebrow"><span class="comment-slashes">//</span>contacto.socket</p>
+                    <h2 class="section-title">Contacto</h2>
+                </div>
 
                 <div class="contact-grid">
                     <!-- Card 1: Email -->
-                    <div class="contact-card scroll-reveal-child" id="contact-email-card">
+                    <div class="contact-card scroll-reveal-child" id="contact-email-card" role="button"
+                        tabindex="0" aria-label="Copiar correo electrónico al portapapeles">
                         <div class="contact-card-icon-wrapper">
                             <!-- Custom SVG envelope icon -->
                             <svg class="contact-svg-icon" viewBox="0 0 24 24" width="36" height="36" fill="none"
