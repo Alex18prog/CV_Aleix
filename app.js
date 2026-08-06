@@ -285,22 +285,31 @@ Combino solidez lógica de Backend (Java/Spring Boot, Node.js) con detalles visu
     const emailValue = document.getElementById('email-value').textContent;
     const emailActionText = document.getElementById('email-action-text');
 
-    if (emailCard) {
-        emailCard.addEventListener('click', () => {
-            // Write to Clipboard
-            navigator.clipboard.writeText(emailValue).then(() => {
-                // Add copied styling class
-                emailCard.classList.add('copied');
-                emailActionText.textContent = '¡Correo Copiado con Éxito!';
+    function copyEmailToClipboard() {
+        navigator.clipboard.writeText(emailValue).then(() => {
+            // Add copied styling class
+            emailCard.classList.add('copied');
+            emailActionText.textContent = '¡Correo Copiado con Éxito!';
 
-                // Reset state after 2.5 seconds
-                setTimeout(() => {
-                    emailCard.classList.remove('copied');
-                    emailActionText.textContent = 'Haga clic para copiar';
-                }, 2500);
-            }).catch(err => {
-                console.error('Error copiando al portapapeles: ', err);
-            });
+            // Reset state after 2.5 seconds
+            setTimeout(() => {
+                emailCard.classList.remove('copied');
+                emailActionText.textContent = 'Haga clic para copiar';
+            }, 2500);
+        }).catch(err => {
+            console.error('Error copiando al portapapeles: ', err);
+        });
+    }
+
+    if (emailCard) {
+        emailCard.addEventListener('click', copyEmailToClipboard);
+
+        // Keyboard support (Enter / Space) since the card is a non-native button
+        emailCard.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                copyEmailToClipboard();
+            }
         });
     }
 
