@@ -179,7 +179,7 @@ Escribe <span class="shell-highlight">projects</span> para ver en qué proyecto 
                 cliOutput.innerHTML = '';
                 return; // skip appending line and scrolling since it's cleared
             default:
-                responseLine.innerHTML = `<span style="color: var(--accent-pink)">Comando no reconocido: '${rawCmd}'</span>. Escribe <span class="shell-highlight">help</span> para ver opciones válidas.`;
+                responseLine.innerHTML = `<span style="color: var(--accent-red)">Comando no reconocido: '${rawCmd}'</span>. Escribe <span class="shell-highlight">help</span> para ver opciones válidas.`;
         }
 
         cliOutput.appendChild(responseLine);
