@@ -176,101 +176,106 @@
 
             <!-- Tecnologías Section -->
             <section id="tecnologias" class="tecnologias-section scroll-reveal">
-                <div class="section-header">
-                    <div class="section-heading">
-                        <p class="section-eyebrow"><span class="comment-slashes">//</span>tecnologias.stack</p>
-                        <h2 class="section-title">Tecnologías</h2>
-                    </div>
-                    <div class="tech-filters" id="tech-filters-container">
-                        <button class="filter-btn active" data-filter="all">Todos</button>
-                        <button class="filter-btn" data-filter="frontend">Frontend</button>
-                        <button class="filter-btn" data-filter="backend">Backend & DevOps</button>
-                    </div>
+                <div class="section-heading">
+                    <p class="section-eyebrow"><span class="comment-slashes">//</span>tecnologias.stack</p>
+                    <h2 class="section-title">Tecnologías</h2>
                 </div>
 
-                <div class="tech-grid" id="tech-grid-list">
-                    <!-- React (Frontend) -->
-                    <div class="tech-card scroll-reveal-child" data-category="frontend" data-tech="react"
-                        tabindex="0" aria-describedby="tooltip-react">
-                        <div class="tech-card-header">
-                            <span class="tech-name">React</span>
-                            <span class="tech-percentage">80%</span>
+                <div class="tech-groups" id="tech-groups-list">
+                    <!-- Lenguajes -->
+                    <div class="tech-group scroll-reveal-child">
+                        <p class="tech-group-eyebrow"><span class="comment-slashes">//</span>lenguajes</p>
+                        <h3 class="tech-group-title">Lenguajes</h3>
+                        <div class="tech-item-list">
+                            <div class="tech-item">
+                                <span class="tech-item-name">Java</span>
+                                <div class="tech-item-projects">
+                                    <a href="#project-plantpulse" class="tech-project-tag tag-plantpulse">PlantPulse</a>
+                                </div>
+                            </div>
+                            <div class="tech-item">
+                                <span class="tech-item-name">TypeScript</span>
+                                <div class="tech-item-projects">
+                                    <a href="#project-triagepilot" class="tech-project-tag tag-triagepilot">TriagePilot</a>
+                                </div>
+                            </div>
+                            <div class="tech-item">
+                                <span class="tech-item-name">Python</span>
+                                <div class="tech-item-projects">
+                                    <a href="#project-lineiq" class="tech-project-tag tag-lineiq">LineIQ</a>
+                                </div>
+                            </div>
                         </div>
-                        <div class="progress-bar-container">
-                            <div class="progress-bar-glow" style="--target-width: 80%;"></div>
-                        </div>
-                        <div class="tech-tooltip" id="tooltip-react">Interfaces reactivas con hooks, consumo de WebSocket en tiempo real
-                            y despliegue de SPAs en producción (PlantPulse, TriagePilot).</div>
                     </div>
 
-                    <!-- Java / Spring Boot (Backend) -->
-                    <div class="tech-card scroll-reveal-child" data-category="backend" data-tech="java-spring"
-                        tabindex="0" aria-describedby="tooltip-java-spring">
-                        <div class="tech-card-header">
-                            <span class="tech-name">Java / Spring Boot</span>
-                            <span class="tech-percentage">90%</span>
+                    <!-- Frameworks -->
+                    <div class="tech-group scroll-reveal-child">
+                        <p class="tech-group-eyebrow"><span class="comment-slashes">//</span>frameworks</p>
+                        <h3 class="tech-group-title">Frameworks</h3>
+                        <div class="tech-item-list">
+                            <div class="tech-item">
+                                <span class="tech-item-name">Spring Boot</span>
+                                <div class="tech-item-projects">
+                                    <a href="#project-plantpulse" class="tech-project-tag tag-plantpulse">PlantPulse</a>
+                                </div>
+                            </div>
+                            <div class="tech-item">
+                                <span class="tech-item-name">React</span>
+                                <div class="tech-item-projects">
+                                    <a href="#project-plantpulse" class="tech-project-tag tag-plantpulse">PlantPulse</a>
+                                    <a href="#project-triagepilot" class="tech-project-tag tag-triagepilot">TriagePilot</a>
+                                </div>
+                            </div>
+                            <div class="tech-item">
+                                <span class="tech-item-name">Node.js</span>
+                                <div class="tech-item-projects">
+                                    <a href="#project-triagepilot" class="tech-project-tag tag-triagepilot">TriagePilot</a>
+                                </div>
+                            </div>
+                            <div class="tech-item">
+                                <span class="tech-item-name">pandas</span>
+                                <div class="tech-item-projects">
+                                    <a href="#project-lineiq" class="tech-project-tag tag-lineiq">LineIQ</a>
+                                </div>
+                            </div>
+                            <div class="tech-item">
+                                <span class="tech-item-name">Streamlit</span>
+                                <div class="tech-item-projects">
+                                    <a href="#project-lineiq" class="tech-project-tag tag-lineiq">LineIQ</a>
+                                </div>
+                            </div>
                         </div>
-                        <div class="progress-bar-container">
-                            <div class="progress-bar-glow" style="--target-width: 90%;"></div>
-                        </div>
-                        <div class="tech-tooltip" id="tooltip-java-spring">Backend robusto con Spring Boot, WebSockets en tiempo real,
-                            JPA/Hibernate y arquitectura de microservicios para sistemas CMMS (PlantPulse).</div>
                     </div>
 
-                    <!-- TypeScript / Node.js (Backend) -->
-                    <div class="tech-card scroll-reveal-child" data-category="backend" data-tech="typescript-node"
-                        tabindex="0" aria-describedby="tooltip-typescript-node">
-                        <div class="tech-card-header">
-                            <span class="tech-name">TypeScript / Node.js</span>
-                            <span class="tech-percentage">85%</span>
+                    <!-- Herramientas -->
+                    <div class="tech-group scroll-reveal-child">
+                        <p class="tech-group-eyebrow"><span class="comment-slashes">//</span>herramientas</p>
+                        <h3 class="tech-group-title">Herramientas</h3>
+                        <div class="tech-item-list">
+                            <div class="tech-item">
+                                <span class="tech-item-name">Docker</span>
+                                <div class="tech-item-projects">
+                                    <a href="#project-plantpulse" class="tech-project-tag tag-plantpulse">PlantPulse</a>
+                                </div>
+                            </div>
+                            <div class="tech-item">
+                                <span class="tech-item-name">CI/CD</span>
+                            </div>
                         </div>
-                        <div class="progress-bar-container">
-                            <div class="progress-bar-glow" style="--target-width: 85%;"></div>
-                        </div>
-                        <div class="tech-tooltip" id="tooltip-typescript-node">APIs tipadas de extremo a extremo con Node.js, integración de
-                            function calling con LLMs y despliegue en producción (TriagePilot).</div>
                     </div>
 
-                    <!-- Python / pandas (Backend) -->
-                    <div class="tech-card scroll-reveal-child" data-category="backend" data-tech="python-pandas"
-                        tabindex="0" aria-describedby="tooltip-python-pandas">
-                        <div class="tech-card-header">
-                            <span class="tech-name">Python (pandas)</span>
-                            <span class="tech-percentage">75%</span>
+                    <!-- IA -->
+                    <div class="tech-group scroll-reveal-child">
+                        <p class="tech-group-eyebrow"><span class="comment-slashes">//</span>ia</p>
+                        <h3 class="tech-group-title">IA</h3>
+                        <div class="tech-item-list">
+                            <div class="tech-item">
+                                <span class="tech-item-name">Gemini API (function calling)</span>
+                                <div class="tech-item-projects">
+                                    <a href="#project-triagepilot" class="tech-project-tag tag-triagepilot">TriagePilot</a>
+                                </div>
+                            </div>
                         </div>
-                        <div class="progress-bar-container">
-                            <div class="progress-bar-glow" style="--target-width: 75%;"></div>
-                        </div>
-                        <div class="tech-tooltip" id="tooltip-python-pandas">Procesamiento y análisis de datos con pandas, cálculo de métricas
-                            OEE y dashboards interactivos con Streamlit (LineIQ).</div>
-                    </div>
-
-                    <!-- APIs de IA / function calling (Backend) -->
-                    <div class="tech-card scroll-reveal-child" data-category="backend" data-tech="ai-apis"
-                        tabindex="0" aria-describedby="tooltip-ai-apis">
-                        <div class="tech-card-header">
-                            <span class="tech-name">APIs de IA (function calling)</span>
-                            <span class="tech-percentage">70%</span>
-                        </div>
-                        <div class="progress-bar-container">
-                            <div class="progress-bar-glow" style="--target-width: 70%;"></div>
-                        </div>
-                        <div class="tech-tooltip" id="tooltip-ai-apis">Integración de Google Gemini API con function calling real para
-                            automatizar el triaje y la toma de decisiones de agentes de IA (TriagePilot).</div>
-                    </div>
-
-                    <!-- Docker / CI-CD (Backend) -->
-                    <div class="tech-card scroll-reveal-child" data-category="backend" data-tech="docker-cicd"
-                        tabindex="0" aria-describedby="tooltip-docker-cicd">
-                        <div class="tech-card-header">
-                            <span class="tech-name">Docker / CI-CD</span>
-                            <span class="tech-percentage">80%</span>
-                        </div>
-                        <div class="progress-bar-container">
-                            <div class="progress-bar-glow" style="--target-width: 80%;"></div>
-                        </div>
-                        <div class="tech-tooltip" id="tooltip-docker-cicd">Contenedorización multi-servicio con Docker Compose y flujos de
-                            integración/despliegue continuo para entornos de producción.</div>
                     </div>
                 </div>
             </section>
@@ -284,7 +289,7 @@
 
                 <div class="projects-container">
                     <!-- Project 1: PlantPulse -->
-                    <article class="project-card scroll-reveal-child">
+                    <article class="project-card scroll-reveal-child" id="project-plantpulse">
                         <div class="project-neon-border"></div>
                         <div class="project-content">
                             <img src="assets/projects/plantpulse-dashboard-demo.gif" alt="Demo del dashboard de PlantPulse mostrando monitorización IoT en tiempo real"
@@ -331,7 +336,7 @@
                     </article>
 
                     <!-- Project 2: LineIQ -->
-                    <article class="project-card scroll-reveal-child">
+                    <article class="project-card scroll-reveal-child" id="project-lineiq">
                         <div class="project-neon-border"></div>
                         <div class="project-content">
                             <img src="assets/projects/lineiq-dashboard-demo.gif" alt="Demo del dashboard de LineIQ mostrando análisis de eficiencia OEE"
@@ -376,7 +381,7 @@
                     </article>
 
                     <!-- Project 3: TriagePilot -->
-                    <article class="project-card scroll-reveal-child">
+                    <article class="project-card scroll-reveal-child" id="project-triagepilot">
                         <div class="project-neon-border"></div>
                         <div class="project-content">
                             <img src="assets/projects/triagepilot-demo.gif" alt="Demo de TriagePilot mostrando el triaje automático de tickets de soporte con IA"

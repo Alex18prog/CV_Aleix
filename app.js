@@ -151,13 +151,13 @@ document.addEventListener('DOMContentLoaded', () => {
 Combino solidez lógica de Backend (Java/Spring Boot, Node.js) con detalles visuales refinados en Frontend (React).`;
                 break;
             case 'skills':
-                responseLine.innerHTML = `Métricas Técnicas de Aleix Pascual:
-  • <span class="shell-highlight">Java / Spring Boot</span> .............. 90% (WebSockets, JPA, Microservicios)
-  • <span class="shell-highlight">TypeScript / Node.js</span> ............ 85% (APIs tipadas, Function Calling)
-  • <span class="shell-highlight">React</span> ............................ 80% (Hooks, WebSocket, SPAs)
-  • <span class="shell-highlight">Docker / CI-CD</span> ................... 80% (Compose, Despliegue continuo)
-  • <span class="shell-highlight">Python (pandas)</span> .................. 75% (Análisis de datos, Streamlit)
-  • <span class="shell-highlight">APIs de IA (function calling)</span> .... 70% (Google Gemini API)`;
+                responseLine.innerHTML = `Stack técnico por categoría:
+  • <span class="shell-highlight">Lenguajes</span>    Java, TypeScript, Python
+  • <span class="shell-highlight">Frameworks</span>   Spring Boot, React, Node.js, pandas, Streamlit
+  • <span class="shell-highlight">Herramientas</span> Docker, CI/CD
+  • <span class="shell-highlight">IA</span>           Gemini API (function calling)
+
+Escribe <span class="shell-highlight">projects</span> para ver en qué proyecto se usó cada una.`;
                 break;
             case 'projects':
                 responseLine.innerHTML = `Proyectos Destacados:
@@ -192,65 +192,8 @@ Combino solidez lógica de Backend (Java/Spring Boot, Node.js) con detalles visu
 
 
     /* ==========================================================================
-       4. TECHNOLOGY FILTERING & DYNAMIC PROGRESS BARS
+       4. INTERSECTION OBSERVER FOR SCROLL REVEALS
        ========================================================================== */
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const techCards = document.querySelectorAll('.tech-card');
-
-    filterButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const filter = btn.getAttribute('data-filter');
-
-            // Set active filter button
-            filterButtons.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-
-            // Filter cards with subtle CSS scale & opacity transitions
-            techCards.forEach(card => {
-                const category = card.getAttribute('data-category');
-                
-                if (filter === 'all' || category === filter) {
-                    card.style.display = 'block';
-                    setTimeout(() => {
-                        card.style.opacity = '1';
-                        card.style.transform = 'scale(1)';
-                    }, 50);
-                } else {
-                    card.style.opacity = '0';
-                    card.style.transform = 'scale(0.92)';
-                    setTimeout(() => {
-                        card.style.display = 'none';
-                    }, 250);
-                }
-            });
-        });
-    });
-
-
-    /* ==========================================================================
-       5. INTERSECTION OBSERVER FOR SKILLS PROGRESS BARS & SCROLL REVEALS
-       ========================================================================== */
-    const progressBars = document.querySelectorAll('.progress-bar-glow');
-    
-    // Skill loading animation triggered when section is entered
-    const skillObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                // Trigger transition width using the custom style target variable
-                progressBars.forEach(bar => {
-                    const targetWidth = bar.getAttribute('style').match(/--target-width:\s*(\d+%);/)[1];
-                    bar.style.width = targetWidth;
-                });
-                skillObserver.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.15 });
-
-    const techSection = document.querySelector('#tecnologias');
-    if (techSection) {
-        skillObserver.observe(techSection);
-    }
-
     // Generic Scroll Reveal Animation Observer
     const scrollRevealElements = document.querySelectorAll('.scroll-reveal');
     
@@ -279,7 +222,7 @@ Combino solidez lógica de Backend (Java/Spring Boot, Node.js) con detalles visu
 
 
     /* ==========================================================================
-       6. 1-CLICK EMAIL COPY TO CLIPBOARD
+       5. 1-CLICK EMAIL COPY TO CLIPBOARD
        ========================================================================== */
     const emailCard = document.getElementById('contact-email-card');
     const emailValue = document.getElementById('email-value').textContent;
@@ -315,7 +258,7 @@ Combino solidez lógica de Backend (Java/Spring Boot, Node.js) con detalles visu
 
 
     /* ==========================================================================
-       7. PREMIUM SIMULATED PDF DOWNLOAD PROGRESS BAR
+       6. PREMIUM SIMULATED PDF DOWNLOAD PROGRESS BAR
        ========================================================================== */
     const downloadBtn = document.getElementById('download-cv-pdf-btn');
     const downloadProgress = document.getElementById('download-progress');
@@ -366,7 +309,7 @@ Combino solidez lógica de Backend (Java/Spring Boot, Node.js) con detalles visu
 
 
     /* ==========================================================================
-       8. AUTOMATIC NAV LINK ACTIVE STATE HIGHLIGHTING ON SCROLL
+       7. AUTOMATIC NAV LINK ACTIVE STATE HIGHLIGHTING ON SCROLL
        ========================================================================== */
     const navLinks = document.querySelectorAll('.nav-link');
     const sections = document.querySelectorAll('main > section');

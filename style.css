@@ -62,7 +62,6 @@ body {
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
-.tech-card:focus-visible,
 .contact-card:focus-visible {
     outline: 2px solid var(--accent-cyan);
     outline-offset: 4px;
@@ -631,7 +630,7 @@ input:focus-visible,
 
 /* Clears the sticky header on anchor navigation / scrollIntoView, so section
    titles aren't hidden underneath it when jumping via the nav menu */
-#inicio, #tecnologias, #proyectos, #contacto {
+#inicio, #tecnologias, #proyectos, #contacto, .project-card {
     scroll-margin-top: 100px;
 }
 
@@ -645,15 +644,6 @@ input:focus-visible,
 .scroll-reveal.revealed {
     opacity: 1;
     transform: translateY(0);
-}
-
-.section-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 3rem;
-    flex-wrap: wrap;
-    gap: 1.5rem;
 }
 
 /* Code-comment style eyebrow label: extends the terminal/editor motif
@@ -687,10 +677,6 @@ input:focus-visible,
     margin-bottom: 1.5rem;
 }
 
-.section-header .section-heading {
-    margin-bottom: 0;
-}
-
 /* ==========================================================================
    TECHNOLOGIES / SKILLS SECTION
    ========================================================================== */
@@ -698,143 +684,121 @@ input:focus-visible,
     padding: 6rem 0;
 }
 
-.tech-filters {
-    display: flex;
-    background: rgba(15, 23, 42, 0.5);
-    border: 1px solid var(--border-glass);
-    padding: 0.35rem;
-    border-radius: 12px;
-    gap: 5px;
-}
-
-.filter-btn {
-    background: transparent;
-    border: none;
-    color: var(--text-secondary);
-    font-family: var(--font-body);
-    font-size: 0.85rem;
-    font-weight: 600;
-    padding: 0.5rem 1.25rem;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: var(--transition-smooth);
-}
-
-.filter-btn:hover {
-    color: var(--text-primary);
-}
-
-.filter-btn.active {
-    color: var(--accent-cyan);
-    background: var(--bg-terminal);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-}
-
-.tech-grid {
+.tech-groups {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
+    align-items: start;
+    gap: 1.75rem;
 }
 
-.tech-card {
+.tech-group {
     background: var(--bg-card);
     border: 1px solid var(--border-glass);
     border-radius: 16px;
     padding: 1.75rem;
-    position: relative;
-    overflow: visible;
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     transition: var(--transition-smooth);
-    cursor: help;
 }
 
-.tech-card:hover {
+.tech-group:hover {
     transform: translateY(-4px);
     border-color: hsla(184, 100%, 50%, 0.3);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3), 
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3),
                 0 0 25px rgba(0, 242, 255, 0.05);
 }
 
-.tech-card-header {
+.tech-group-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-bottom: 0.35rem;
+}
+
+.tech-group-eyebrow .comment-slashes {
+    color: var(--accent-cyan);
+    font-weight: 700;
+    margin-right: 0.4em;
+}
+
+.tech-group-title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #fff;
+    margin-bottom: 1.4rem;
+}
+
+.tech-item-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+}
+
+.tech-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 1.25rem;
+    flex-wrap: wrap;
+    gap: 0.5rem 0.75rem;
+    padding-bottom: 0.9rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.tech-name {
-    font-family: var(--font-display);
-    font-weight: 700;
-    font-size: 1.15rem;
-    color: #fff;
+.tech-item:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
 }
 
-.tech-percentage {
+.tech-item-name {
     font-family: var(--font-mono);
-    font-size: 0.95rem;
-    color: var(--accent-cyan);
+    font-size: 0.92rem;
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.tech-item-projects {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+
+/* Project-evidence tags: each links to the project card that actually
+   used this technology, instead of a self-assessed proficiency score */
+.tech-project-tag {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
     font-weight: 700;
-    text-shadow: 0 0 8px hsla(184, 100%, 50%, 0.25);
-}
-
-.progress-bar-container {
-    width: 100%;
-    height: 8px;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 4px;
-    position: relative;
-    overflow: hidden;
-}
-
-.progress-bar-glow {
-    height: 100%;
-    width: 0; /* Animated dynamically in JS */
-    background: linear-gradient(90deg, var(--accent-blue), var(--accent-cyan));
-    border-radius: 4px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    box-shadow: 0 0 12px var(--accent-cyan);
-    transition: width 1.5s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-/* Customized Tech detail popover / tooltip */
-.tech-tooltip {
-    position: absolute;
-    bottom: calc(100% + 12px);
-    left: 5%;
-    width: 90%;
-    background: rgba(15, 23, 42, 0.98);
-    border: 1px solid var(--accent-cyan);
-    border-radius: 8px;
-    padding: 0.85rem 1.1rem;
-    font-size: 0.8rem;
-    color: var(--text-secondary);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-    opacity: 0;
-    transform: translateY(8px) scale(0.95);
-    pointer-events: none;
+    text-decoration: none;
+    padding: 0.22rem 0.6rem;
+    border-radius: 20px;
+    letter-spacing: 0.2px;
+    white-space: nowrap;
     transition: var(--transition-smooth);
-    z-index: 100;
 }
 
-.tech-card:hover .tech-tooltip,
-.tech-card:focus-visible .tech-tooltip {
-    opacity: 1;
-    transform: translateY(0) scale(1);
+.tech-project-tag.tag-plantpulse {
+    color: var(--accent-cyan);
+    background: hsla(184, 100%, 50%, 0.1);
+    border: 1px solid hsla(184, 100%, 50%, 0.3);
 }
 
-.tech-tooltip::after {
-    content: '';
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    border-width: 6px;
-    border-style: solid;
-    border-color: var(--accent-cyan) transparent transparent transparent;
+.tech-project-tag.tag-lineiq {
+    color: var(--accent-green);
+    background: hsla(125, 100%, 60%, 0.08);
+    border: 1px solid hsla(125, 100%, 60%, 0.3);
+}
+
+.tech-project-tag.tag-triagepilot {
+    color: var(--accent-pink);
+    background: hsla(327, 100%, 50%, 0.08);
+    border: 1px solid hsla(327, 100%, 50%, 0.3);
+}
+
+.tech-project-tag:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.15);
 }
 
 /* ==========================================================================
@@ -1400,22 +1364,7 @@ input:focus-visible,
     .code-editor {
         font-size: 0.82rem;
     }
-    .section-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1.25rem;
-        margin-bottom: 2rem;
-    }
-    .tech-filters {
-        width: 100%;
-    }
-    .filter-btn {
-        flex-grow: 1;
-        text-align: center;
-        padding: 0.5rem 0.25rem;
-        font-size: 0.8rem;
-    }
-    .tech-grid {
+    .tech-groups {
         grid-template-columns: 1fr;
         gap: 1.25rem;
     }
