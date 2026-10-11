@@ -6,543 +6,259 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aleix Pascual | Full Stack Developer</title>
     <meta name="description"
-        content="Portfolio interactivo y currículum profesional de Aleix Pascual, desarrollador Full Stack apasionado por el código limpio y la arquitectura de software.">
-    <!-- Google Fonts: Bricolage Grotesque (Display), Plus Jakarta Sans (Body), Fira Code (Mono) -->
+        content="Aleix Pascual, desarrollador full stack. Herramientas para equipos de operaciones: mantenimiento industrial, eficiencia de producción y soporte.">
+    <meta name="theme-color" content="#F2F3F5" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#101418" media="(prefers-color-scheme: dark)">
+    <!-- Google Fonts: Newsreader (display), Hanken Grotesk (texto) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Fira+Code:wght@300..700&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,300..500;1,6..72,300..400&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <a class="skip-link" href="#proyectos">Saltar a los proyectos</a>
 
-    <!-- Ambient background texture (editor-gutter dot grid) -->
-    <div class="grid-background" aria-hidden="true"></div>
-
-    <!-- Main Container -->
-    <div class="app-container">
-
-        <!-- Header / Nav -->
-        <header class="main-header">
-            <div class="logo">
-                <span class="logo-bracket">&lt;</span>
-                <span class="logo-text">Aleix.dev</span>
-                <span class="logo-bracket">/&gt;</span>
-            </div>
-            <nav class="main-nav">
-                <a href="#inicio" class="nav-link active" id="nav-btn-inicio">Inicio</a>
-                <a href="#tecnologias" class="nav-link" id="nav-btn-tecnologias">Tecnologías</a>
-                <a href="#proyectos" class="nav-link" id="nav-btn-proyectos">Proyectos</a>
-                <a href="#contacto" class="nav-link" id="nav-btn-contacto">Contacto</a>
+    <header class="site-header">
+        <div class="container site-header-inner">
+            <a href="#inicio" class="brand">Aleix Pascual</a>
+            <nav class="site-nav" aria-label="Secciones">
+                <a href="#proyectos" class="nav-link">Proyectos</a>
+                <a href="#stack" class="nav-link nav-link-secondary">Stack</a>
+                <a href="#sobre-mi" class="nav-link nav-link-secondary">Sobre mí</a>
+                <a href="#contacto" class="nav-link">Contacto</a>
             </nav>
-        </header>
+        </div>
+    </header>
 
-        <main>
-            <!-- Hero / Presentación -->
-            <section id="inicio" class="hero-section scroll-reveal">
-                <div class="hero-content">
-                    <h1 class="hero-title">Aleix Pascual</h1>
-                    <p class="hero-subtitle">Full Stack Developer <span class="divider">|</span> Apasionado por el código
-                        limpio</p>
-                </div>
+    <main>
+        <!-- Presentación -->
+        <section id="inicio" class="hero container">
+            <p class="hero-role">Desarrollador full stack</p>
+            <h1 class="hero-title">Herramientas para equipos de operaciones: mantenimiento, producción y soporte.</h1>
+            <p class="hero-lede">
+                Mis proyectos recientes: un CMMS con monitorización IoT en tiempo real, un dashboard de
+                eficiencia OEE y un agente de IA que clasifica tickets de soporte. Backend en Java y Node.js,
+                frontend en React.
+            </p>
+            <div class="hero-actions">
+                <a href="#proyectos" class="button button-primary">Ver proyectos</a>
+                <a href="CV_Aleix_DAW.pdf" download class="button button-quiet">Descargar CV (PDF)</a>
+            </div>
+            <p class="hero-status"><span class="status-dot" aria-hidden="true"></span>Disponible para incorporarme</p>
+        </section>
 
-                <!-- Interactive Terminal IDE -->
-                <div class="terminal-ide" id="main-terminal">
-                    <div class="terminal-header">
-                        <div class="terminal-dots">
-                            <span class="dot red" id="term-close-btn" title="Cerrar (Minimizar)"></span>
-                            <span class="dot yellow" id="term-min-btn" title="Maximizar"></span>
-                            <span class="dot green" id="term-max-btn" title="Expandir"></span>
-                        </div>
-                        <div class="terminal-title-container">
-                            <svg class="file-icon" viewBox="0 0 24 24" width="14" height="14" fill="none"
-                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                                <polyline points="14 2 14 8 20 8"></polyline>
-                                <line x1="16" y1="13" x2="8" y2="13"></line>
-                                <line x1="16" y1="17" x2="8" y2="17"></line>
-                                <polyline points="10 9 9 9 8 9"></polyline>
-                            </svg>
-                            <span class="terminal-title" id="active-tab-title">presentacion.html</span>
-                        </div>
-                        <div class="terminal-actions">
-                            <button id="run-code-btn" class="terminal-action-btn" title="Ejecutar Código HTML">
-                                <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
-                                    <polygon points="5 3 19 12 5 21 5 3"></polygon>
-                                </svg>
-                                <span>RUN</span>
-                            </button>
-                        </div>
+        <!-- Proyectos -->
+        <section id="proyectos" class="section container" aria-labelledby="proyectos-title">
+            <h2 class="section-title" id="proyectos-title">Proyectos</h2>
+
+            <article class="project" id="project-plantpulse">
+                <figure class="project-media">
+                    <img src="assets/projects/plantpulse.webp" data-still="assets/projects/plantpulse.webp"
+                        data-motion="assets/projects/plantpulse-loop.gif"
+                        alt="Dashboard de PlantPulse: cuatro máquinas con indicadores de temperatura y vibración, órdenes de trabajo y registro de alertas"
+                        width="1034" height="656">
+                    <button type="button" class="media-toggle" aria-pressed="false">
+                        <svg class="icon-play" viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4 2.5v11l9-5.5z" fill="currentColor"/></svg>
+                        <svg class="icon-pause" viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4 2.5h3v11H4zM9 2.5h3v11H9z" fill="currentColor"/></svg>
+                        <span class="media-toggle-label">Ver en movimiento</span>
+                    </button>
+                </figure>
+                <div class="project-text">
+                    <div class="project-heading">
+                        <h3 class="project-name">PlantPulse</h3>
+                        <p class="project-kind">Full stack</p>
                     </div>
-
-                    <!-- IDE Sidebar & Editor Workspace -->
-                    <div class="ide-workspace">
-                        <!-- Tiny file explorer tabs -->
-                        <div class="ide-tabs-bar">
-                            <button class="ide-tab active" id="tab-presentacion" data-file="presentacion.html">
-                                <span class="tab-lang html">HTML</span> presentacion.html
-                            </button>
-                            <button class="ide-tab" id="tab-config" data-file="config.json">
-                                <span class="tab-lang json">JSON</span> config.json
-                            </button>
-                            <button class="ide-tab" id="tab-terminal-cmd" data-file="terminal.sh">
-                                <span class="tab-lang sh">SH</span> terminal.sh
-                            </button>
-                        </div>
-
-                        <!-- Code Content Area -->
-                        <div class="editor-body">
-                            <!-- File content 1: presentacion.html -->
-                            <div class="file-content active" id="content-presentacion">
-                                <div class="line-numbers">
-                                    <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span><span>14</span>
-                                </div>
-                                <pre class="code-editor"><code class="language-html"><span class="token tag">&lt;section</span> <span class="token attr-name">id</span>=<span class="token attr-value">"presentacion"</span><span class="token tag">&gt;</span>
-  <span class="token tag">&lt;h1&gt;</span>Hola, soy Aleix Pascual<span class="token tag">&lt;/h1&gt;</span>
-  <span class="token tag">&lt;p&gt;</span>
-    Mi formación como desarrollador Full Stack se combina con mi pasión por el
-    desarrollo de aplicaciones web y una mentalidad de aprendizaje
-    constante. Mi especialidad es el desarrollo de soluciones dinámicas,
-    prestando atención tanto a la lógica del backend como al detalle
-    visual en el frontend. Mi meta es agregar valor inmediato a los
-    equipos de desarrollo mediante la proactividad, la colaboración en
-    equipo y una dedicación ininterrumpida a mejorar procesos y la calidad
-    del software.
-  <span class="token tag">&lt;/p&gt;</span>
-  <span class="token tag">&lt;a</span> <span class="token attr-name">href</span>=<span class="token attr-value">"#contacto"</span><span class="token tag">&gt;</span>¡Hablemos!<span class="token tag">&lt;/a&gt;</span>
-<span class="token tag">&lt;/section&gt;</span></code></pre>
-                            </div>
-
-                            <!-- File content 2: config.json -->
-                            <div class="file-content" id="content-config">
-                                <div class="line-numbers">
-                                    <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span>
-                                </div>
-                                <pre class="code-editor"><code class="language-json"><span class="token punctuation">{</span>
-  <span class="token property">"nombre"</span><span class="token operator">:</span> <span class="token string">"Aleix Pascual"</span><span class="token punctuation">,</span>
-  <span class="token property">"rol"</span><span class="token operator">:</span> <span class="token string">"Full Stack Developer"</span><span class="token punctuation">,</span>
-  <span class="token property">"enfoque"</span><span class="token operator">:</span> <span class="token string">"Código Limpio & Alto Rendimiento"</span><span class="token punctuation">,</span>
-  <span class="token property">"intereses"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
-    <span class="token string">"Backend Arquitectura"</span><span class="token punctuation">,</span>
-    <span class="token string">"Diseño UX/UI Pixel-Perfect"</span><span class="token punctuation">,</span>
-    <span class="token string">"Automatización & DevOps"</span>
-  <span class="token punctuation">]</span><span class="token punctuation">,</span>
-  <span class="token property">"disponibilidad"</span><span class="token operator">:</span> <span class="token boolean">true</span>
-<span class="token punctuation">}</span></code></pre>
-                            </div>
-
-                            <!-- File content 3: Interactive CLI terminal.sh -->
-                            <div class="file-content" id="content-terminal-cmd">
-                                <div class="terminal-shell" id="cli-shell">
-                                    <div class="shell-output" id="cli-output">
-                                        <p class="shell-welcome">Sistema inicializado correctamente. Escribe <span
-                                                class="shell-highlight">help</span> para ver la lista de comandos
-                                            disponibles.</p>
-                                    </div>
-                                    <div class="shell-input-line">
-                                        <span class="shell-prompt">aleix@portfolio:~$</span>
-                                        <input type="text" id="cli-input" class="shell-input" autocomplete="off"
-                                            spellcheck="false" placeholder="Escribe un comando...">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Executable live preview block (initially hidden, appears on RUN) -->
-                        <div class="editor-preview" id="live-preview-output">
-                            <div class="preview-banner">
-                                <span class="preview-status-indicator"></span>
-                                <span class="preview-status-text">Consola de Vista Previa (Modo Live)</span>
-                                <button id="close-preview-btn" class="close-preview-btn">&times;</button>
-                            </div>
-                            <div class="preview-render-area" id="render-area">
-                                <!-- Rendered HTML will go here dynamically -->
-                            </div>
-                        </div>
+                    <div class="project-body">
+                        <p>
+                            CMMS para mantenimiento industrial. Recibe la temperatura y la vibración de cada máquina en
+                            tiempo real por WebSocket, avisa cuando se acercan a sus límites y genera las órdenes de
+                            trabajo automáticamente.
+                        </p>
+                        <ul class="project-stack" aria-label="Tecnologías">
+                            <li>Java</li><li>Spring Boot</li><li>React</li><li>Docker</li>
+                        </ul>
+                        <p class="project-links">
+                            <a href="https://github.com/Alex18prog/plantpulse" target="_blank" rel="noopener noreferrer">Ver código en GitHub</a>
+                            <a href="https://alex18prog.github.io/plantpulse/" target="_blank" rel="noopener noreferrer">Abrir la demo</a>
+                        </p>
                     </div>
                 </div>
+            </article>
 
-                <div class="scroll-indicator" id="scroll-to-tech">
-                    <span>Desliza para explorar</span>
-                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round" class="bounce-arrow">
-                        <line x1="12" y1="5" x2="12" y2="19"></line>
-                        <polyline points="19 12 12 19 5 12"></polyline>
-                    </svg>
-                </div>
-            </section>
-
-            <!-- Tecnologías Section -->
-            <section id="tecnologias" class="tecnologias-section scroll-reveal">
-                <div class="section-heading">
-                    <p class="section-eyebrow"><span class="comment-slashes">//</span>tecnologias.stack</p>
-                    <h2 class="section-title">Tecnologías</h2>
-                </div>
-
-                <div class="tech-groups" id="tech-groups-list">
-                    <!-- Lenguajes -->
-                    <div class="tech-group scroll-reveal-child">
-                        <p class="tech-group-eyebrow"><span class="comment-slashes">//</span>lenguajes</p>
-                        <h3 class="tech-group-title">Lenguajes</h3>
-                        <div class="tech-item-list">
-                            <div class="tech-item">
-                                <span class="tech-item-name">Java</span>
-                                <div class="tech-item-projects">
-                                    <a href="#project-plantpulse" class="tech-project-tag tag-plantpulse">PlantPulse</a>
-                                </div>
-                            </div>
-                            <div class="tech-item">
-                                <span class="tech-item-name">TypeScript</span>
-                                <div class="tech-item-projects">
-                                    <a href="#project-triagepilot" class="tech-project-tag tag-triagepilot">TriagePilot</a>
-                                </div>
-                            </div>
-                            <div class="tech-item">
-                                <span class="tech-item-name">Python</span>
-                                <div class="tech-item-projects">
-                                    <a href="#project-lineiq" class="tech-project-tag tag-lineiq">LineIQ</a>
-                                </div>
-                            </div>
-                        </div>
+            <article class="project" id="project-lineiq">
+                <figure class="project-media project-media-wide">
+                    <img src="assets/projects/lineiq.webp" data-still="assets/projects/lineiq.webp"
+                        data-motion="assets/projects/lineiq-loop.gif"
+                        alt="Dashboard de LineIQ: OEE del 80,8 % con disponibilidad, rendimiento y calidad, tendencia diaria y comparación por línea"
+                        width="1480" height="660" loading="lazy">
+                    <button type="button" class="media-toggle" aria-pressed="false">
+                        <svg class="icon-play" viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4 2.5v11l9-5.5z" fill="currentColor"/></svg>
+                        <svg class="icon-pause" viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4 2.5h3v11H4zM9 2.5h3v11H9z" fill="currentColor"/></svg>
+                        <span class="media-toggle-label">Ver en movimiento</span>
+                    </button>
+                </figure>
+                <div class="project-text">
+                    <div class="project-heading">
+                        <h3 class="project-name">LineIQ</h3>
+                        <p class="project-kind">Análisis de datos</p>
                     </div>
-
-                    <!-- Frameworks -->
-                    <div class="tech-group scroll-reveal-child">
-                        <p class="tech-group-eyebrow"><span class="comment-slashes">//</span>frameworks</p>
-                        <h3 class="tech-group-title">Frameworks</h3>
-                        <div class="tech-item-list">
-                            <div class="tech-item">
-                                <span class="tech-item-name">Spring Boot</span>
-                                <div class="tech-item-projects">
-                                    <a href="#project-plantpulse" class="tech-project-tag tag-plantpulse">PlantPulse</a>
-                                </div>
-                            </div>
-                            <div class="tech-item">
-                                <span class="tech-item-name">React</span>
-                                <div class="tech-item-projects">
-                                    <a href="#project-plantpulse" class="tech-project-tag tag-plantpulse">PlantPulse</a>
-                                    <a href="#project-triagepilot" class="tech-project-tag tag-triagepilot">TriagePilot</a>
-                                </div>
-                            </div>
-                            <div class="tech-item">
-                                <span class="tech-item-name">Node.js</span>
-                                <div class="tech-item-projects">
-                                    <a href="#project-triagepilot" class="tech-project-tag tag-triagepilot">TriagePilot</a>
-                                </div>
-                            </div>
-                            <div class="tech-item">
-                                <span class="tech-item-name">pandas</span>
-                                <div class="tech-item-projects">
-                                    <a href="#project-lineiq" class="tech-project-tag tag-lineiq">LineIQ</a>
-                                </div>
-                            </div>
-                            <div class="tech-item">
-                                <span class="tech-item-name">Streamlit</span>
-                                <div class="tech-item-projects">
-                                    <a href="#project-lineiq" class="tech-project-tag tag-lineiq">LineIQ</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Herramientas -->
-                    <div class="tech-group scroll-reveal-child">
-                        <p class="tech-group-eyebrow"><span class="comment-slashes">//</span>herramientas</p>
-                        <h3 class="tech-group-title">Herramientas</h3>
-                        <div class="tech-item-list">
-                            <div class="tech-item">
-                                <span class="tech-item-name">Docker</span>
-                                <div class="tech-item-projects">
-                                    <a href="#project-plantpulse" class="tech-project-tag tag-plantpulse">PlantPulse</a>
-                                </div>
-                            </div>
-                            <div class="tech-item">
-                                <span class="tech-item-name">CI/CD</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- IA -->
-                    <div class="tech-group scroll-reveal-child">
-                        <p class="tech-group-eyebrow"><span class="comment-slashes">//</span>ia</p>
-                        <h3 class="tech-group-title">IA</h3>
-                        <div class="tech-item-list">
-                            <div class="tech-item">
-                                <span class="tech-item-name">Gemini API (function calling)</span>
-                                <div class="tech-item-projects">
-                                    <a href="#project-triagepilot" class="tech-project-tag tag-triagepilot">TriagePilot</a>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="project-body">
+                        <p>
+                            Dashboard de eficiencia de producción (OEE) para líneas de fabricación. Desglosa
+                            disponibilidad, rendimiento y calidad, y permite filtrar por línea, turno y rango de fechas.
+                        </p>
+                        <ul class="project-stack" aria-label="Tecnologías">
+                            <li>Python</li><li>pandas</li><li>Streamlit</li>
+                        </ul>
+                        <p class="project-links">
+                            <a href="https://github.com/Alex18prog/lineiq" target="_blank" rel="noopener noreferrer">Ver código en GitHub</a>
+                            <a href="https://lineiq-oee.streamlit.app/" target="_blank" rel="noopener noreferrer">Abrir la demo</a>
+                        </p>
+                        <p class="project-note">La demo puede tardar unos segundos en arrancar.</p>
                     </div>
                 </div>
-            </section>
+            </article>
 
-            <!-- Proyectos Destacados Section -->
-            <section id="proyectos" class="proyectos-section scroll-reveal">
-                <div class="section-heading">
-                    <p class="section-eyebrow"><span class="comment-slashes">//</span>proyectos.destacados</p>
-                    <h2 class="section-title">Proyectos Destacados</h2>
-                </div>
-
-                <div class="projects-container">
-                    <!-- Project 1: PlantPulse -->
-                    <article class="project-card scroll-reveal-child" id="project-plantpulse">
-                        <div class="project-neon-border"></div>
-                        <div class="project-content">
-                            <img src="assets/projects/plantpulse-dashboard-demo.gif" alt="Demo del dashboard de PlantPulse mostrando monitorización IoT en tiempo real"
-                                class="project-image" loading="lazy" width="640" height="400">
-                            <header class="project-card-header">
-                                <h3 class="project-name">PlantPulse</h3>
-                                <span class="project-badge">Full Stack</span>
-                            </header>
-                            <p class="project-description">
-                                CMMS con monitorización IoT en tiempo real vía WebSocket, alertas y órdenes de trabajo
-                                automáticas.
-                            </p>
-                            <div class="project-tags">
-                                <span class="tag-pill">Java</span>
-                                <span class="tag-pill">Spring Boot</span>
-                                <span class="tag-pill">React</span>
-                                <span class="tag-pill">Docker</span>
-                            </div>
-                            <div class="project-footer">
-                                <a href="https://github.com/Alex18prog/plantpulse" target="_blank" rel="noopener noreferrer"
-                                    class="project-link" id="github-link-plantpulse">
-                                    <span>Ver Código en GitHub</span>
-                                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor"
-                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                        class="link-arrow">
-                                        <path
-                                            d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-                                        </path>
-                                    </svg>
-                                </a>
-                                <a href="https://alex18prog.github.io/plantpulse/" target="_blank" rel="noopener noreferrer"
-                                    class="project-link-demo" id="demo-link-plantpulse">
-                                    <span>Demo en Vivo</span>
-                                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor"
-                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                        class="link-arrow">
-                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                                        <polyline points="15 3 21 3 21 9"></polyline>
-                                        <line x1="10" y1="14" x2="21" y2="3"></line>
-                                    </svg>
-                                </a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Project 2: LineIQ -->
-                    <article class="project-card scroll-reveal-child" id="project-lineiq">
-                        <div class="project-neon-border"></div>
-                        <div class="project-content">
-                            <img src="assets/projects/lineiq-dashboard-demo.gif" alt="Demo del dashboard de LineIQ mostrando análisis de eficiencia OEE"
-                                class="project-image" loading="lazy" width="640" height="400">
-                            <header class="project-card-header">
-                                <h3 class="project-name">LineIQ</h3>
-                                <span class="project-badge">Data Analysis</span>
-                            </header>
-                            <p class="project-description">
-                                Dashboard de análisis de eficiencia de producción (OEE) para líneas de fabricación.
-                            </p>
-                            <div class="project-tags">
-                                <span class="tag-pill">Python</span>
-                                <span class="tag-pill">pandas</span>
-                                <span class="tag-pill">Streamlit</span>
-                            </div>
-                            <div class="project-footer">
-                                <a href="https://github.com/Alex18prog/lineiq" target="_blank" rel="noopener noreferrer"
-                                    class="project-link" id="github-link-lineiq">
-                                    <span>Ver Código en GitHub</span>
-                                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor"
-                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                        class="link-arrow">
-                                        <path
-                                            d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-                                        </path>
-                                    </svg>
-                                </a>
-                                <a href="https://lineiq-oee.streamlit.app/" target="_blank" rel="noopener noreferrer"
-                                    class="project-link-demo" id="demo-link-lineiq">
-                                    <span>Demo en Vivo</span>
-                                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor"
-                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                        class="link-arrow">
-                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                                        <polyline points="15 3 21 3 21 9"></polyline>
-                                        <line x1="10" y1="14" x2="21" y2="3"></line>
-                                    </svg>
-                                </a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Project 3: TriagePilot -->
-                    <article class="project-card scroll-reveal-child" id="project-triagepilot">
-                        <div class="project-neon-border"></div>
-                        <div class="project-content">
-                            <img src="assets/projects/triagepilot-demo.gif" alt="Demo de TriagePilot mostrando el triaje automático de tickets de soporte con IA"
-                                class="project-image" loading="lazy" width="640" height="400">
-                            <header class="project-card-header">
-                                <h3 class="project-name">TriagePilot</h3>
-                                <span class="project-badge">AI Agent</span>
-                            </header>
-                            <p class="project-description">
-                                Agente de IA para triaje de tickets de soporte con function calling real (Google
-                                Gemini API).
-                            </p>
-                            <div class="project-tags">
-                                <span class="tag-pill">TypeScript</span>
-                                <span class="tag-pill">Node.js</span>
-                                <span class="tag-pill">React</span>
-                                <span class="tag-pill">Gemini API</span>
-                            </div>
-                            <div class="project-footer">
-                                <a href="https://github.com/Alex18prog/triagepilot" target="_blank" rel="noopener noreferrer"
-                                    class="project-link" id="github-link-triagepilot">
-                                    <span>Ver Código en GitHub</span>
-                                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor"
-                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                        class="link-arrow">
-                                        <path
-                                            d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-                                        </path>
-                                    </svg>
-                                </a>
-                                <a href="https://triagepilot-qr2a.onrender.com" target="_blank" rel="noopener noreferrer"
-                                    class="project-link-demo" id="demo-link-triagepilot">
-                                    <span>Demo en Vivo</span>
-                                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor"
-                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                        class="link-arrow">
-                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                                        <polyline points="15 3 21 3 21 9"></polyline>
-                                        <line x1="10" y1="14" x2="21" y2="3"></line>
-                                    </svg>
-                                </a>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-            </section>
-
-            <!-- Contacto Section -->
-            <section id="contacto" class="contacto-section scroll-reveal">
-                <div class="section-heading">
-                    <p class="section-eyebrow"><span class="comment-slashes">//</span>contacto.socket</p>
-                    <h2 class="section-title">Contacto</h2>
-                </div>
-
-                <div class="contact-grid">
-                    <!-- Card 1: Email -->
-                    <div class="contact-card scroll-reveal-child" id="contact-email-card" role="button"
-                        tabindex="0" aria-label="Copiar correo electrónico al portapapeles">
-                        <div class="contact-card-icon-wrapper">
-                            <!-- Custom SVG envelope icon -->
-                            <svg class="contact-svg-icon" viewBox="0 0 24 24" width="36" height="36" fill="none"
-                                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
-                                </path>
-                                <polyline points="22,6 12,13 2,6"></polyline>
-                            </svg>
-                        </div>
-                        <h3 class="contact-card-title">Email</h3>
-                        <p class="contact-card-value" id="email-value">alex18prog@gmail.com</p>
-                        <div class="contact-action-overlay">
-                            <span class="click-action-text" id="email-action-text">Haga clic para copiar</span>
-                        </div>
+            <article class="project" id="project-triagepilot">
+                <figure class="project-media">
+                    <img src="assets/projects/triagepilot.webp" data-still="assets/projects/triagepilot.webp"
+                        data-motion="assets/projects/triagepilot-loop.gif"
+                        alt="TriagePilot: cola de tickets, traza de las llamadas del agente y resultado del triaje con respuesta sugerida"
+                        width="696" height="616" loading="lazy">
+                    <button type="button" class="media-toggle" aria-pressed="false">
+                        <svg class="icon-play" viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4 2.5v11l9-5.5z" fill="currentColor"/></svg>
+                        <svg class="icon-pause" viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4 2.5h3v11H4zM9 2.5h3v11H9z" fill="currentColor"/></svg>
+                        <span class="media-toggle-label">Ver en movimiento</span>
+                    </button>
+                </figure>
+                <div class="project-text">
+                    <div class="project-heading">
+                        <h3 class="project-name">TriagePilot</h3>
+                        <p class="project-kind">Agente de IA</p>
                     </div>
-
-                    <!-- Card 2: LinkedIn -->
-                    <a href="https://www.linkedin.com/in/alex-pascual-ortega-7602222b7" target="_blank" rel="noopener noreferrer"
-                        class="contact-card scroll-reveal-child" id="contact-linkedin-card">
-                        <div class="contact-card-icon-wrapper">
-                            <!-- Custom SVG chain link -->
-                            <svg class="contact-svg-icon" viewBox="0 0 24 24" width="36" height="36" fill="none"
-                                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-                                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-                            </svg>
-                        </div>
-                        <h3 class="contact-card-title">LinkedIn</h3>
-                        <p class="contact-card-value">Conectemos</p>
-                        <div class="contact-action-overlay">
-                            <span class="click-action-text">Visitar perfil</span>
-                        </div>
-                    </a>
-
-                    <!-- Card 3: GitHub -->
-                    <a href="https://github.com/Alex18prog" target="_blank" rel="noopener noreferrer"
-                        class="contact-card scroll-reveal-child" id="contact-github-card">
-                        <div class="contact-card-icon-wrapper">
-                            <!-- Custom SVG laptop/computer -->
-                            <svg class="contact-svg-icon" viewBox="0 0 24 24" width="36" height="36" fill="none"
-                                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-                                <line x1="8" y1="21" x2="16" y2="21"></line>
-                                <line x1="12" y1="17" x2="12" y2="21"></line>
-                            </svg>
-                        </div>
-                        <h3 class="contact-card-title">GitHub</h3>
-                        <p class="contact-card-value">Mira mi código</p>
-                        <div class="contact-action-overlay">
-                            <span class="click-action-text">Explorar repositorios</span>
-                        </div>
-                    </a>
-
-                    <!-- Card 4: WhatsApp -->
-                    <a href="https://wa.me/34679847024" target="_blank" rel="noopener noreferrer"
-                        class="contact-card scroll-reveal-child" id="contact-whatsapp-card">
-                        <div class="contact-card-icon-wrapper">
-                            <!-- Custom SVG message bubble -->
-                            <svg class="contact-svg-icon" viewBox="0 0 24 24" width="36" height="36" fill="none"
-                                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-                            </svg>
-                        </div>
-                        <h3 class="contact-card-title">WhatsApp</h3>
-                        <p class="contact-card-value">Escríbeme un mensaje</p>
-                        <div class="contact-action-overlay">
-                            <span class="click-action-text">Iniciar chat</span>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="contact-extra scroll-reveal">
-                    <p class="dynamic-cv-text">Mira mi CV de forma dinámica:</p>
-                    <a href="https://alex18prog.github.io/CV_Aleix/" target="_blank" rel="noopener noreferrer"
-                        class="cv-dynamic-link">https://alex18prog.github.io/CV_Aleix/</a>
-
-                    <div class="download-container">
-                        <!-- Custom styled PDF download button -->
-                        <a href="CV_Aleix_DAW.pdf" download="CV_Aleix_DAW.pdf" class="download-btn"
-                            id="download-cv-pdf-btn">
-                            <span class="download-icon-wrapper">
-                                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
-                                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                                    <polyline points="7 10 12 15 17 10"></polyline>
-                                    <line x1="12" y1="15" x2="12" y2="3"></line>
-                                </svg>
-                            </span>
-                            <span class="download-btn-text" id="download-btn-text">Descargar mi CV (PDF)</span>
-                            <span class="download-progress-bar" id="download-progress"></span>
-                        </a>
+                    <div class="project-body">
+                        <p>
+                            Agente que clasifica tickets de soporte. Consulta los datos del cliente y la base de
+                            conocimiento con function calling real sobre la API de Gemini, propone una respuesta y
+                            señala los casos que necesitan revisión humana.
+                        </p>
+                        <ul class="project-stack" aria-label="Tecnologías">
+                            <li>TypeScript</li><li>Node.js</li><li>React</li><li>Gemini API</li>
+                        </ul>
+                        <p class="project-links">
+                            <a href="https://github.com/Alex18prog/triagepilot" target="_blank" rel="noopener noreferrer">Ver código en GitHub</a>
+                            <a href="https://triagepilot-qr2a.onrender.com" target="_blank" rel="noopener noreferrer">Abrir la demo</a>
+                        </p>
+                        <p class="project-note">La demo puede tardar unos segundos en arrancar.</p>
                     </div>
                 </div>
-            </section>
-        </main>
+            </article>
+        </section>
 
-        <!-- Footer -->
-        <footer class="main-footer">
-            <p>&copy; 2026 - Programado con <span class="heart-pulse">❤️</span> por Aleix Pascual</p>
-        </footer>
-    </div>
+        <!-- Stack -->
+        <section id="stack" class="section container" aria-labelledby="stack-title">
+            <div class="section-intro">
+                <h2 class="section-title" id="stack-title">Stack</h2>
+                <p>Cada tecnología, junto al proyecto en el que la he usado.</p>
+            </div>
 
-    <!-- Script file -->
+            <div class="stack-grid">
+                <div class="stack-group">
+                    <h3>Lenguajes</h3>
+                    <ul>
+                        <li><span>Java</span><a href="#project-plantpulse">PlantPulse</a></li>
+                        <li><span>TypeScript</span><a href="#project-triagepilot">TriagePilot</a></li>
+                        <li><span>Python</span><a href="#project-lineiq">LineIQ</a></li>
+                    </ul>
+                </div>
+                <div class="stack-group">
+                    <h3>Frameworks y librerías</h3>
+                    <ul>
+                        <li><span>Spring Boot</span><a href="#project-plantpulse">PlantPulse</a></li>
+                        <li><span>React</span><span class="stack-uses"><a href="#project-plantpulse">PlantPulse</a>, <a href="#project-triagepilot">TriagePilot</a></span></li>
+                        <li><span>Node.js</span><a href="#project-triagepilot">TriagePilot</a></li>
+                        <li><span>pandas</span><a href="#project-lineiq">LineIQ</a></li>
+                        <li><span>Streamlit</span><a href="#project-lineiq">LineIQ</a></li>
+                    </ul>
+                </div>
+                <div class="stack-group">
+                    <h3>Herramientas</h3>
+                    <ul>
+                        <li><span>Docker</span><a href="#project-plantpulse">PlantPulse</a></li>
+                        <li><span>CI/CD</span></li>
+                    </ul>
+                </div>
+                <div class="stack-group">
+                    <h3>IA</h3>
+                    <ul>
+                        <li><span>Gemini API, function calling</span><a href="#project-triagepilot">TriagePilot</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sobre mí -->
+        <section id="sobre-mi" class="section container" aria-labelledby="sobre-mi-title">
+            <div class="about">
+                <h2 class="section-title" id="sobre-mi-title">Sobre mí</h2>
+                <div class="about-text">
+                    <p>
+                        Me formé como desarrollador full stack y me interesa el recorrido completo de una aplicación
+                        web: la lógica del backend y el detalle visual del frontend.
+                    </p>
+                    <p>
+                        Busco un equipo en el que aportar desde el primer día, colaborar y seguir aprendiendo, con
+                        atención constante a la calidad del software y a mejorar los procesos.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contacto -->
+        <section id="contacto" class="section container" aria-labelledby="contacto-title">
+            <h2 class="section-title" id="contacto-title">Contacto</h2>
+            <p class="contact-lede">La forma más rápida de hablar conmigo es por correo.</p>
+
+            <div class="contact-email-row">
+                <a href="mailto:alex18prog@gmail.com" class="contact-email" id="email-value">alex18prog@gmail.com</a>
+                <button type="button" class="copy-button" id="copy-email-btn">Copiar</button>
+                <span class="visually-hidden" id="copy-status" role="status" aria-live="polite"></span>
+            </div>
+
+            <ul class="contact-links">
+                <li><a href="https://www.linkedin.com/in/alex-pascual-ortega-7602222b7" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+                <li><a href="https://github.com/Alex18prog" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+                <li><a href="https://wa.me/34679847024" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+                <li><a href="CV_Aleix_DAW.pdf" download>Descargar CV (PDF)</a></li>
+            </ul>
+
+            <!-- Terminal interactiva, opcional -->
+            <details class="cli" id="cli">
+                <summary>¿Prefieres la terminal?</summary>
+                <div class="cli-shell" id="cli-shell">
+                    <div class="cli-output" id="cli-output" aria-live="polite">
+                        <p>Escribe <span class="cli-hl">help</span> para ver los comandos disponibles.</p>
+                    </div>
+                    <label class="cli-input-line">
+                        <span class="cli-prompt">aleix@portfolio:~$</span>
+                        <input type="text" id="cli-input" class="cli-input" autocomplete="off" spellcheck="false"
+                            aria-label="Comando de la terminal">
+                    </label>
+                </div>
+            </details>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container site-footer-inner">
+            <p>&copy; 2026 Aleix Pascual</p>
+            <a href="#inicio">Volver arriba</a>
+        </div>
+    </footer>
+
     <script src="app.js"></script>
 </body>
 
