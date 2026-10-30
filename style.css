@@ -336,6 +336,79 @@ button {
     margin-bottom: clamp(2.5rem, 5vw, 4rem);
 }
 
+/* Pestañas de proyectos
+   Sin JavaScript no hay pestañas: los dos grupos se ven apilados con su
+   título. app.js muestra la lista de pestañas y oculta el título del grupo.
+   ========================================================================== */
+.tab-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 2rem;
+    margin-bottom: clamp(2.5rem, 5vw, 4rem);
+    border-bottom: 1px solid var(--rule);
+}
+
+.tab-list[hidden] {
+    display: none;
+}
+
+.tab {
+    min-height: 2.75rem;
+    padding: 0.625rem 0;
+    margin-bottom: -1px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--muted);
+    background: none;
+    border: 0;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.tab:hover {
+    color: var(--ink);
+}
+
+.tab[aria-selected="true"] {
+    color: var(--ink);
+    border-bottom-color: var(--ink);
+}
+
+.group-title {
+    margin-bottom: clamp(2rem, 4vw, 3rem);
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 2.4vw, 1.875rem);
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+/* Con pestañas, el nombre del grupo ya está en la pestaña */
+.tabs.is-enhanced .group-title {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+}
+
+.tabs:not(.is-enhanced) .tab-panel + .tab-panel {
+    margin-top: clamp(5rem, 10vw, 8.5rem);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .tabs.is-enhanced .tab-panel:not([hidden]) {
+        animation: panel-in 0.25s ease-out;
+    }
+}
+
+@keyframes panel-in {
+    from {
+        opacity: 0;
+    }
+}
+
 /* Proyectos
    ========================================================================== */
 .project {
@@ -391,6 +464,11 @@ button {
     border-radius: 999px;
     cursor: pointer;
     transition: border-color 0.2s ease, transform 0.15s ease;
+}
+
+/* Sin JavaScript el botón no haría nada: se queda la imagen fija */
+html:not(.js) .media-toggle {
+    display: none;
 }
 
 .media-toggle:hover {
@@ -489,6 +567,57 @@ button {
     margin-top: 0.5rem;
     font-size: 0.875rem;
     color: var(--muted);
+}
+
+.project-evidence {
+    margin-top: 1rem;
+    color: var(--ink-soft);
+}
+
+/* Ledgerly, el proyecto destacado: dos capturas más con su explicación */
+.project-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+}
+
+.project-gallery figure {
+    container-type: inline-size;
+}
+
+.project-media-small {
+    --mat-pad: clamp(0.75rem, 2.5cqw, 1.5rem);
+    --mat-ratio: 0.5;
+}
+
+.project-gallery figcaption {
+    max-width: 30rem;
+    margin-top: 0.875rem;
+    font-size: 0.9375rem;
+    color: var(--muted);
+}
+
+/* Otros stacks: más compacto, sin capturas */
+.compact-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 3.5rem 3rem;
+}
+
+.project-compact {
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--rule);
+}
+
+.project-compact .project-name {
+    font-size: clamp(1.5rem, 2.2vw, 1.75rem);
+}
+
+.project-compact > p:not([class]) {
+    max-width: 34rem;
+    margin-top: 1rem;
+    color: var(--ink-soft);
 }
 
 /* Stack
@@ -743,8 +872,13 @@ button {
 /* Responsive
    ========================================================================== */
 @media (max-width: 900px) {
-    .stack-grid {
+    .stack-grid,
+    .compact-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .project-gallery {
+        grid-template-columns: 1fr;
     }
 
     .project-heading,
@@ -781,6 +915,18 @@ button {
     .project-media img {
         width: 100%;
         max-height: none;
+    }
+
+    .project-media-small {
+        padding: 0.75rem;
+    }
+
+    .compact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tab-list {
+        gap: 0 1.5rem;
     }
 
     .media-toggle {

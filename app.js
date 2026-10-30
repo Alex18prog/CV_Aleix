@@ -5,6 +5,9 @@
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Marca que el JavaScript funciona: el CSS solo muestra los controles que dependen de él
+    document.documentElement.classList.add('js');
+
 
     /* 1. Capturas: imagen fija por defecto, GIF solo si el visitante lo pide
        ========================================================================== */
@@ -26,6 +29,81 @@ document.addEventListener('DOMContentLoaded', () => {
             label.textContent = playing ? 'Ver en movimiento' : 'Ver imagen fija';
         });
     });
+
+
+    /* 1b. Pestañas de proyectos (patrón ARIA tabs, activación automática)
+       Sin este script los dos grupos se ven apilados; aquí se añaden los roles
+       y se oculta el panel inactivo. El hash (#proyectos, #otros-stacks o el
+       id de un proyecto) decide la pestaña, para poder enlazarla.
+       ========================================================================== */
+    const tabsRoot = document.getElementById('project-tabs');
+
+    if (tabsRoot) {
+        const tabList = tabsRoot.querySelector('.tab-list');
+        const tabs = Array.from(tabList.querySelectorAll('.tab'));
+        const panels = Array.from(tabsRoot.querySelectorAll('.tab-panel'));
+        const section = document.getElementById('proyectos');
+
+        tabList.setAttribute('role', 'tablist');
+        tabList.setAttribute('aria-label', 'Proyectos por stack');
+        tabs.forEach((tab, i) => {
+            tab.setAttribute('role', 'tab');
+            tab.setAttribute('aria-controls', panels[i].id);
+            panels[i].setAttribute('role', 'tabpanel');
+            panels[i].setAttribute('aria-labelledby', tab.id);
+        });
+
+        const select = (index, { focus = false, updateHash = false } = {}) => {
+            tabs.forEach((tab, i) => {
+                const selected = i === index;
+                tab.setAttribute('aria-selected', String(selected));
+                tab.tabIndex = selected ? 0 : -1;
+                panels[i].hidden = !selected;
+            });
+            if (focus) tabs[index].focus();
+            if (updateHash) history.replaceState(null, '', `#${tabs[index].dataset.hash}`);
+        };
+
+        tabs.forEach((tab, i) => {
+            tab.addEventListener('click', () => select(i, { updateHash: true }));
+        });
+
+        tabList.addEventListener('keydown', e => {
+            const current = tabs.indexOf(document.activeElement);
+            if (current < 0) return;
+            const last = tabs.length - 1;
+            const next = {
+                ArrowRight: current === last ? 0 : current + 1,
+                ArrowLeft: current === 0 ? last : current - 1,
+                Home: 0,
+                End: last
+            }[e.key];
+            if (next === undefined) return;
+            e.preventDefault();
+            select(next, { focus: true, updateHash: true });
+        });
+
+        // Elige la pestaña que contiene el destino del hash y lleva la vista hasta él
+        const followHash = () => {
+            const id = decodeURIComponent(location.hash.slice(1));
+            const target = id && document.getElementById(id);
+            if (!target) return false;
+            if (target === section) {
+                select(0);
+                return true;
+            }
+            const index = panels.findIndex(panel => panel.contains(target));
+            if (index < 0) return false;
+            select(index);
+            (target === panels[index] ? section : target).scrollIntoView();
+            return true;
+        };
+
+        tabsRoot.classList.add('is-enhanced');
+        tabList.hidden = false;
+        if (!followHash()) select(0);
+        window.addEventListener('hashchange', followHash);
+    }
 
 
     /* 2. Copiar el email
@@ -104,9 +182,15 @@ concurrencia, idempotencia, auditoría y seguridad.`,
   ${hl('Frameworks')}    Spring Boot, React, Node.js, pandas, Streamlit
   ${hl('Herramientas')}  Docker, CI/CD
   ${hl('IA')}            Gemini API (function calling)`,
-        projects: () => `  ${hl('PlantPulse')}   CMMS con monitorización IoT en tiempo real
+        projects: () => `Java · Spring Boot · Angular
+  ${hl('Ledgerly')}     Núcleo bancario con libro mayor de doble entrada
+  ${hl('CapaLoop')}     QMS con el flujo de ISO 9001 (No Conformidades y CAPA)
+  ${hl('PlantPulse')}   CMMS con monitorización IoT en tiempo real (React)
+Otros stacks
+  ${hl('TriagePilot')}  Agente de IA para triaje de tickets
+  ${hl('SagaFlow')}     Saga distribuida con .NET y RabbitMQ
   ${hl('LineIQ')}       Dashboard de eficiencia OEE
-  ${hl('TriagePilot')}  Agente de IA para triaje de tickets`,
+  ${hl('Plan Nutricional')}  Proyecto final de DAW (C#/.NET)`,
         contact: () => `  ${hl('Email')}     alex18prog@gmail.com
   ${hl('LinkedIn')}  linkedin.com/in/alex-pascual-ortega-7602222b7
   ${hl('GitHub')}    github.com/Alex18prog`

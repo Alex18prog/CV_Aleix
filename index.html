@@ -50,112 +50,226 @@
             <p class="hero-status"><span class="status-dot" aria-hidden="true"></span>Disponible para incorporarme</p>
         </section>
 
-        <!-- Proyectos -->
+        <!-- Proyectos: dos grupos por stack. Sin JavaScript se ven los dos apilados;
+             app.js los convierte en pestañas accesibles (patrón ARIA tabs). -->
         <section id="proyectos" class="section container" aria-labelledby="proyectos-title">
             <h2 class="section-title" id="proyectos-title">Proyectos</h2>
 
-            <article class="project" id="project-plantpulse">
-                <figure class="project-media">
-                    <img src="assets/projects/plantpulse.webp" data-still="assets/projects/plantpulse.webp"
-                        data-motion="assets/projects/plantpulse-loop.gif"
-                        alt="Dashboard de PlantPulse: cuatro máquinas con indicadores de temperatura y vibración, órdenes de trabajo y registro de alertas"
-                        width="1034" height="656">
-                    <button type="button" class="media-toggle" aria-pressed="false">
-                        <svg class="icon-play" viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4 2.5v11l9-5.5z" fill="currentColor"/></svg>
-                        <svg class="icon-pause" viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4 2.5h3v11H4zM9 2.5h3v11H9z" fill="currentColor"/></svg>
-                        <span class="media-toggle-label">Ver en movimiento</span>
-                    </button>
-                </figure>
-                <div class="project-text">
-                    <div class="project-heading">
-                        <h3 class="project-name">PlantPulse</h3>
-                        <p class="project-kind">Full stack</p>
-                    </div>
-                    <div class="project-body">
-                        <p>
-                            CMMS para mantenimiento industrial. Recibe la temperatura y la vibración de cada máquina en
-                            tiempo real por WebSocket, avisa cuando se acercan a sus límites y genera las órdenes de
-                            trabajo automáticamente.
-                        </p>
-                        <ul class="project-stack" aria-label="Tecnologías">
-                            <li>Java</li><li>Spring Boot</li><li>React</li><li>Docker</li>
-                        </ul>
-                        <p class="project-links">
-                            <a href="https://github.com/Alex18prog/plantpulse" target="_blank" rel="noopener noreferrer">Ver código en GitHub</a>
-                            <a href="https://alex18prog.github.io/plantpulse/" target="_blank" rel="noopener noreferrer">Abrir la demo</a>
-                        </p>
-                    </div>
+            <div class="tabs" id="project-tabs">
+                <div class="tab-list" hidden>
+                    <button type="button" class="tab" id="tab-principal" data-hash="proyectos">Java · Spring Boot · Angular</button>
+                    <button type="button" class="tab" id="tab-otros" data-hash="otros-stacks">Otros stacks</button>
                 </div>
-            </article>
 
-            <article class="project" id="project-lineiq">
-                <figure class="project-media project-media-wide">
-                    <img src="assets/projects/lineiq.webp" data-still="assets/projects/lineiq.webp"
-                        data-motion="assets/projects/lineiq-loop.gif"
-                        alt="Dashboard de LineIQ: OEE del 80,8 % con disponibilidad, rendimiento y calidad, tendencia diaria y comparación por línea"
-                        width="1480" height="660" loading="lazy">
-                    <button type="button" class="media-toggle" aria-pressed="false">
-                        <svg class="icon-play" viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4 2.5v11l9-5.5z" fill="currentColor"/></svg>
-                        <svg class="icon-pause" viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4 2.5h3v11H4zM9 2.5h3v11H9z" fill="currentColor"/></svg>
-                        <span class="media-toggle-label">Ver en movimiento</span>
-                    </button>
-                </figure>
-                <div class="project-text">
-                    <div class="project-heading">
-                        <h3 class="project-name">LineIQ</h3>
-                        <p class="project-kind">Análisis de datos</p>
-                    </div>
-                    <div class="project-body">
-                        <p>
-                            Dashboard de eficiencia de producción (OEE) para líneas de fabricación. Desglosa
-                            disponibilidad, rendimiento y calidad, y permite filtrar por línea, turno y rango de fechas.
-                        </p>
-                        <ul class="project-stack" aria-label="Tecnologías">
-                            <li>Python</li><li>pandas</li><li>Streamlit</li>
-                        </ul>
-                        <p class="project-links">
-                            <a href="https://github.com/Alex18prog/lineiq" target="_blank" rel="noopener noreferrer">Ver código en GitHub</a>
-                            <a href="https://lineiq-oee.streamlit.app/" target="_blank" rel="noopener noreferrer">Abrir la demo</a>
-                        </p>
-                        <p class="project-note">La demo puede tardar unos segundos en arrancar.</p>
-                    </div>
-                </div>
-            </article>
+                <div class="tab-panel" id="proyectos-principales">
+                    <h3 class="group-title">Java · Spring Boot · Angular</h3>
 
-            <article class="project" id="project-triagepilot">
-                <figure class="project-media">
-                    <img src="assets/projects/triagepilot.webp" data-still="assets/projects/triagepilot.webp"
-                        data-motion="assets/projects/triagepilot-loop.gif"
-                        alt="TriagePilot: cola de tickets, traza de las llamadas del agente y resultado del triaje con respuesta sugerida"
-                        width="696" height="616" loading="lazy">
-                    <button type="button" class="media-toggle" aria-pressed="false">
-                        <svg class="icon-play" viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4 2.5v11l9-5.5z" fill="currentColor"/></svg>
-                        <svg class="icon-pause" viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4 2.5h3v11H4zM9 2.5h3v11H9z" fill="currentColor"/></svg>
-                        <span class="media-toggle-label">Ver en movimiento</span>
-                    </button>
-                </figure>
-                <div class="project-text">
-                    <div class="project-heading">
-                        <h3 class="project-name">TriagePilot</h3>
-                        <p class="project-kind">Agente de IA</p>
-                    </div>
-                    <div class="project-body">
-                        <p>
-                            Agente que clasifica tickets de soporte. Consulta los datos del cliente y la base de
-                            conocimiento con function calling real sobre la API de Gemini, propone una respuesta y
-                            señala los casos que necesitan revisión humana.
-                        </p>
-                        <ul class="project-stack" aria-label="Tecnologías">
-                            <li>TypeScript</li><li>Node.js</li><li>React</li><li>Gemini API</li>
-                        </ul>
-                        <p class="project-links">
-                            <a href="https://github.com/Alex18prog/triagepilot" target="_blank" rel="noopener noreferrer">Ver código en GitHub</a>
-                            <a href="https://triagepilot-qr2a.onrender.com" target="_blank" rel="noopener noreferrer">Abrir la demo</a>
-                        </p>
-                        <p class="project-note">La demo puede tardar unos segundos en arrancar.</p>
+                    <article class="project project-featured" id="project-ledgerly">
+                        <figure class="project-media">
+                            <img src="assets/projects/ledgerly.webp" data-still="assets/projects/ledgerly.webp"
+                                data-motion="assets/projects/ledgerly-loop.gif"
+                                alt="Resumen de Ledgerly: saldos de dos cuentas, gráfico de entradas y salidas por día y actividad reciente"
+                                width="1360" height="960">
+                            <button type="button" class="media-toggle" aria-pressed="false">
+                                <svg class="icon-play" viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4 2.5v11l9-5.5z" fill="currentColor"/></svg>
+                                <svg class="icon-pause" viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4 2.5h3v11H4zM9 2.5h3v11H9z" fill="currentColor"/></svg>
+                                <span class="media-toggle-label">Ver en movimiento</span>
+                            </button>
+                        </figure>
+                        <div class="project-text">
+                            <div class="project-heading">
+                                <h4 class="project-name">Ledgerly</h4>
+                                <p class="project-kind">Proyecto principal</p>
+                            </div>
+                            <div class="project-body">
+                                <p>
+                                    Núcleo bancario con libro mayor de doble entrada. Toda transferencia genera dos
+                                    apuntes que suman cero, el saldo se calcula a partir de los apuntes en vez de
+                                    guardarse, las operaciones son idempotentes y la concurrencia está probada contra
+                                    PostgreSQL real. La interfaz en Angular la sirve el propio Spring Boot.
+                                </p>
+                                <p class="project-evidence">
+                                    Lo cubren 487 tests de backend, 100 de frontend y 11 de extremo a extremo con
+                                    Playwright.
+                                </p>
+                                <ul class="project-stack" aria-label="Tecnologías">
+                                    <li>Java 21</li><li>Spring Boot</li><li>Angular</li><li>PostgreSQL</li><li>Docker</li>
+                                </ul>
+                                <p class="project-links">
+                                    <a href="https://github.com/Alex18prog/ledgerly" target="_blank" rel="noopener noreferrer">Ver código en GitHub</a>
+                                    <a href="https://ledgerly-2f48.onrender.com" target="_blank" rel="noopener noreferrer">Abrir la demo</a>
+                                </p>
+                                <p class="project-note">El primer acceso puede tardar un par de minutos (plan gratuito).</p>
+                            </div>
+                        </div>
+                        <div class="project-gallery">
+                            <figure>
+                                <div class="project-media project-media-small">
+                                    <img src="assets/projects/ledgerly-retry.webp"
+                                        alt="Transferencia con resultado desconocido tras un fallo de red y un botón Retry"
+                                        width="1080" height="545" loading="lazy">
+                                </div>
+                                <figcaption>Si se corta la conexión, reintentar es seguro: la transferencia no se ejecuta dos veces.</figcaption>
+                            </figure>
+                            <figure>
+                                <div class="project-media project-media-small">
+                                    <img src="assets/projects/ledgerly-audit.webp"
+                                        alt="Pantalla de auditoría con el resultado CLEAN, sin infracciones"
+                                        width="1010" height="400" loading="lazy">
+                                </div>
+                                <figcaption>La auditoría recalcula cada invariante del libro mayor a partir de los apuntes.</figcaption>
+                            </figure>
+                        </div>
+                    </article>
+
+                    <article class="project" id="project-capaloop">
+                        <figure class="project-media">
+                            <img src="assets/projects/capaloop.webp" data-still="assets/projects/capaloop.webp"
+                                data-motion="assets/projects/capaloop-loop.gif"
+                                alt="Detalle de una CAPA en CapaLoop: pendiente de verificación, No Conformidad vinculada e historial de auditoría con cada transición, quién la hizo y cuándo"
+                                width="700" height="554" loading="lazy">
+                            <button type="button" class="media-toggle" aria-pressed="false">
+                                <svg class="icon-play" viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4 2.5v11l9-5.5z" fill="currentColor"/></svg>
+                                <svg class="icon-pause" viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4 2.5h3v11H4zM9 2.5h3v11H9z" fill="currentColor"/></svg>
+                                <span class="media-toggle-label">Ver en movimiento</span>
+                            </button>
+                        </figure>
+                        <div class="project-text">
+                            <div class="project-heading">
+                                <h4 class="project-name">CapaLoop</h4>
+                                <p class="project-kind">Gestión de calidad</p>
+                            </div>
+                            <div class="project-body">
+                                <p>
+                                    QMS con el flujo de ISO 9001: No Conformidades y CAPA (acciones correctivas y
+                                    preventivas). Cada transición de estado depende del rol, quien crea o envía un
+                                    registro no puede aprobarlo (segregación de funciones) y todo cambio queda en una
+                                    auditoría inmutable.
+                                </p>
+                                <p class="project-evidence">
+                                    La No Conformidad se aprueba antes de abrir su CAPA; la CAPA pasa por en progreso,
+                                    pendiente de verificación y verificada, y la No Conformidad se cierra sola cuando
+                                    todas sus CAPA quedan resueltas.
+                                </p>
+                                <ul class="project-stack" aria-label="Tecnologías">
+                                    <li>Java 21</li><li>Spring Boot</li><li>Angular</li>
+                                </ul>
+                                <p class="project-links">
+                                    <a href="https://github.com/Alex18prog/capaloop" target="_blank" rel="noopener noreferrer">Código del backend</a>
+                                    <a href="https://github.com/Alex18prog/capaloop-frontend" target="_blank" rel="noopener noreferrer">Código del frontend</a>
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project" id="project-plantpulse">
+                        <figure class="project-media">
+                            <img src="assets/projects/plantpulse.webp" data-still="assets/projects/plantpulse.webp"
+                                data-motion="assets/projects/plantpulse-loop.gif"
+                                alt="Dashboard de PlantPulse: cuatro máquinas con indicadores de temperatura y vibración, órdenes de trabajo y registro de alertas"
+                                width="1034" height="656" loading="lazy">
+                            <button type="button" class="media-toggle" aria-pressed="false">
+                                <svg class="icon-play" viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4 2.5v11l9-5.5z" fill="currentColor"/></svg>
+                                <svg class="icon-pause" viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4 2.5h3v11H4zM9 2.5h3v11H9z" fill="currentColor"/></svg>
+                                <span class="media-toggle-label">Ver en movimiento</span>
+                            </button>
+                        </figure>
+                        <div class="project-text">
+                            <div class="project-heading">
+                                <h4 class="project-name">PlantPulse</h4>
+                                <p class="project-kind">Full stack, con frontend en React</p>
+                            </div>
+                            <div class="project-body">
+                                <p>
+                                    CMMS para mantenimiento industrial. Recibe la temperatura y la vibración de cada
+                                    máquina en tiempo real por WebSocket, avisa cuando se acercan a sus límites y genera
+                                    las órdenes de trabajo automáticamente.
+                                </p>
+                                <ul class="project-stack" aria-label="Tecnologías">
+                                    <li>Java</li><li>Spring Boot</li><li>React</li><li>Docker</li>
+                                </ul>
+                                <p class="project-links">
+                                    <a href="https://github.com/Alex18prog/plantpulse" target="_blank" rel="noopener noreferrer">Ver código en GitHub</a>
+                                    <a href="https://alex18prog.github.io/plantpulse/" target="_blank" rel="noopener noreferrer">Abrir la demo</a>
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="tab-panel" id="otros-stacks">
+                    <h3 class="group-title">Otros stacks</h3>
+
+                    <div class="compact-grid">
+                        <article class="project-compact" id="project-triagepilot">
+                            <h4 class="project-name">TriagePilot</h4>
+                            <p class="project-kind">Agente de IA</p>
+                            <p>
+                                Agente que clasifica tickets de soporte. Consulta los datos del cliente y la base de
+                                conocimiento con function calling real sobre la API de Gemini, propone una respuesta y
+                                señala los casos que necesitan revisión humana.
+                            </p>
+                            <ul class="project-stack" aria-label="Tecnologías">
+                                <li>TypeScript</li><li>Node.js</li><li>React</li><li>Gemini API</li>
+                            </ul>
+                            <p class="project-links">
+                                <a href="https://github.com/Alex18prog/triagepilot" target="_blank" rel="noopener noreferrer">Ver código en GitHub</a>
+                                <a href="https://triagepilot-qr2a.onrender.com" target="_blank" rel="noopener noreferrer">Abrir la demo</a>
+                            </p>
+                            <p class="project-note">La demo puede tardar unos segundos en arrancar.</p>
+                        </article>
+
+                        <article class="project-compact" id="project-sagaflow">
+                            <h4 class="project-name">SagaFlow</h4>
+                            <p class="project-kind">Microservicios</p>
+                            <p>
+                                Procesamiento de pedidos repartido en cuatro servicios .NET y coordinado por una saga
+                                orquestada sobre RabbitMQ. Si un paso falla a mitad, una transacción compensatoria
+                                deshace lo que ya se había hecho.
+                            </p>
+                            <ul class="project-stack" aria-label="Tecnologías">
+                                <li>.NET</li><li>RabbitMQ</li><li>Docker</li>
+                            </ul>
+                            <p class="project-links">
+                                <a href="https://github.com/Alex18prog/sagaflow" target="_blank" rel="noopener noreferrer">Ver código en GitHub</a>
+                            </p>
+                        </article>
+
+                        <article class="project-compact" id="project-lineiq">
+                            <h4 class="project-name">LineIQ</h4>
+                            <p class="project-kind">Análisis de datos</p>
+                            <p>
+                                Dashboard de eficiencia de producción (OEE) para líneas de fabricación. Desglosa
+                                disponibilidad, rendimiento y calidad, y permite filtrar por línea, turno y rango de
+                                fechas.
+                            </p>
+                            <ul class="project-stack" aria-label="Tecnologías">
+                                <li>Python</li><li>pandas</li><li>Streamlit</li>
+                            </ul>
+                            <p class="project-links">
+                                <a href="https://github.com/Alex18prog/lineiq" target="_blank" rel="noopener noreferrer">Ver código en GitHub</a>
+                                <a href="https://lineiq-oee.streamlit.app/" target="_blank" rel="noopener noreferrer">Abrir la demo</a>
+                            </p>
+                            <p class="project-note">La demo puede tardar unos segundos en arrancar.</p>
+                        </article>
+
+                        <article class="project-compact" id="project-plannutricional">
+                            <h4 class="project-name">Plan Nutricional</h4>
+                            <p class="project-kind">Proyecto final de DAW</p>
+                            <p>
+                                Aplicación web que adapta un plan nutricional a los datos físicos y los objetivos de
+                                cada usuario.
+                            </p>
+                            <ul class="project-stack" aria-label="Tecnologías">
+                                <li>C#</li><li>.NET</li>
+                            </ul>
+                            <p class="project-links">
+                                <a href="https://github.com/Alex18prog/proyecto-final-daw-PlanNutricional" target="_blank" rel="noopener noreferrer">Ver código en GitHub</a>
+                            </p>
+                        </article>
                     </div>
                 </div>
-            </article>
+            </div>
         </section>
 
         <!-- Stack -->
