@@ -97,9 +97,9 @@ document.addEventListener('DOMContentLoaded', () => {
   ${hl('projects')}   Proyectos
   ${hl('contact')}    Contacto
   ${hl('clear')}      Limpiar la terminal`,
-        about: () => `Desarrollador full stack. Backend en Java/Spring Boot y Node.js,
-frontend en React. Herramientas para equipos de operaciones:
-mantenimiento, producción y soporte.`,
+        about: () => `Desarrollador full stack. Backend en Java con Spring Boot,
+frontend en Angular. Sistemas donde la corrección importa:
+concurrencia, idempotencia, auditoría y seguridad.`,
         skills: () => `  ${hl('Lenguajes')}     Java, TypeScript, Python
   ${hl('Frameworks')}    Spring Boot, React, Node.js, pandas, Streamlit
   ${hl('Herramientas')}  Docker, CI/CD
