@@ -193,7 +193,7 @@ Otros stacks
   ${hl('LineIQ')}       Dashboard de eficiencia OEE
   ${hl('Plan Nutricional')}  Proyecto final de DAW (C#/.NET)`,
         contact: () => `  ${hl('Email')}     alex18prog@gmail.com
-  ${hl('LinkedIn')}  linkedin.com/in/alex-pascual-ortega-7602222b7
+  ${hl('LinkedIn')}  linkedin.com/in/aleix-pascual-ortega-7602222b7
   ${hl('GitHub')}    github.com/Alex18prog`
     };
 
