@@ -178,10 +178,11 @@ document.addEventListener('DOMContentLoaded', () => {
         about: () => `Desarrollador full stack. Backend en Java con Spring Boot,
 frontend en Angular. Sistemas donde la corrección importa:
 concurrencia, idempotencia, auditoría y seguridad.`,
-        skills: () => `  ${hl('Lenguajes')}     Java, TypeScript, Python
-  ${hl('Frameworks')}    Spring Boot, React, Node.js, pandas, Streamlit
-  ${hl('Herramientas')}  Docker, CI/CD
-  ${hl('IA')}            Gemini API (function calling)`,
+        skills: () => `  ${hl('Stack principal')}      Java, Spring Boot, Angular, PostgreSQL, Docker
+  ${hl('También trabajo con')}  TypeScript, React, Node.js, Python, pandas,
+                       Streamlit, C#/.NET, RabbitMQ, SQL Server, Maven,
+                       Flyway, Testcontainers, Playwright, Git,
+                       GitHub Actions, Gemini API (function calling)`,
         projects: () => `Java · Spring Boot · Angular
   ${hl('Ledgerly')}     Núcleo bancario con libro mayor de doble entrada
   ${hl('CapaLoop')}     QMS con el flujo de ISO 9001 (No Conformidades y CAPA)

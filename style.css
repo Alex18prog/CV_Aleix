@@ -620,12 +620,26 @@ html:not(.js) .media-toggle {
     color: var(--ink-soft);
 }
 
-/* Stack
+/* Stack: principal a la izquierda, el resto en dos columnas
    ========================================================================== */
-.stack-grid {
+.stack-levels {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 2.5rem 1.5rem;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: 3rem 1.5rem;
+}
+
+.stack-main {
+    grid-column: 1 / span 5;
+}
+
+.stack-also {
+    grid-column: 7 / span 6;
+}
+
+.stack-also ul {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 1.5rem;
 }
 
 .stack-group h3 {
@@ -651,6 +665,12 @@ html:not(.js) .media-toggle {
 
 .stack-group li > :first-child {
     font-weight: 500;
+}
+
+.stack-main li > :first-child {
+    font-family: var(--font-display);
+    font-size: 1.375rem;
+    font-weight: 400;
 }
 
 .stack-group a,
@@ -872,9 +892,13 @@ html:not(.js) .media-toggle {
 /* Responsive
    ========================================================================== */
 @media (max-width: 900px) {
-    .stack-grid,
     .compact-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .stack-main,
+    .stack-also {
+        grid-column: 1 / -1;
     }
 
     .project-gallery {
@@ -934,7 +958,7 @@ html:not(.js) .media-toggle {
         bottom: 0.625rem;
     }
 
-    .stack-grid {
+    .stack-also ul {
         grid-template-columns: 1fr;
     }
 }
